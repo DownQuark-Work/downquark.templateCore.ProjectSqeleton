@@ -1,0 +1,2 @@
+Should be in here because nothiing outside of this directory should utilize them (other than the styleguide documentation)
+naming this `_qomponents` will help cut down confusion when internally symlinked as `_components`

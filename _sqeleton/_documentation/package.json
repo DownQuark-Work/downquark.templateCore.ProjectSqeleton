@@ -1,0 +1,11 @@
+{
+  "name": "documentation",
+  "version": "0.0.1",
+  "description": "DownQuark Skeleton Documentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "spec"
+  },
+  "author": "",
+  "license": "ISC"
+}
