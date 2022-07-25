@@ -1,0 +1,27 @@
+.transmission-upload-progress {
+  margin: 1rem;
+
+  .percent {
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+
+    &.complete {
+      color: rgba(var(--bs-info-rgb));
+      top: -1rem;
+      right: 1rem;
+      position: relative;
+
+      img {
+        margin-top: -.75rem;
+        width: 2.5rem
+      }
+    }
+  }
+  .upload-status { 
+    bottom: .25rem;
+    position: absolute;
+    right: .5rem;
+    width: fit-content;
+  }
+}

@@ -1,0 +1,33 @@
+// reusable, generic, classes
+
+// ui/ux
+.cursor{
+  &-grab {
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+  &-pointer { cursor: pointer; }
+}}
+
+@for $i from 1 through 50 {
+  .z-#{$i}{
+    z-index: $i;
+  }
+}
+
+// positioning
+.abs-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+// visibility
+.overflow{
+  &-auto { overflow: auto; }
+  &-hidden { overflow: hidden; }
+  &-scroll { overflow: scroll; }
+  &-visible { overflow: visible; }
+}

@@ -1,0 +1,65 @@
+.transmission-patient-pages-preview {
+  // NOTE: this is a WIP and needs to be improved
+  // navbar:  56
+  // header: 118
+  // tabs:    42
+  //       = 216
+  height: calc(100vh - 216px);
+  overflow-y: auto;
+
+  .col-sm-3 {
+    .page-thumb-scrollable {
+      max-height: calc(100vh - 216px);
+      overflow-y: auto;
+      position: fixed;
+      width:    17%;
+
+      .page-thumb-icons {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: .5rem
+      }
+
+      .page-thumb-wrapper {
+        cursor: pointer;
+        // cursor: ns-resize; // TODO: re-enable when drag and drop is enabled
+        position: relative;
+        :hover { opacity:.6; }
+
+        > {
+          p, .page-thumb-drop-area {
+            background-color: rgba(10,10,10,.85);
+            border-radius: 3px;
+            margin: .25rem;
+            padding: .15rem .75rem;
+          }
+          .page-thumb-drop-area {
+            background-color: rgba(255,255,255,.3);
+            color: rgba(10,10,10,.85);
+            height: 0;
+            opacity: 0;
+            &.active {
+              height: auto;
+              opacity:1
+            }
+          }
+        }
+
+        img {
+          opacity: .8;
+        ~ p {
+          background-color: rgba(100,100,100,.75);
+          color: black;
+          font-size: 1.125rem;
+          font-weight: 800;
+          margin: -.5rem .5rem .5rem;
+          pointer-events: none;;
+          text-align: center;
+          z-index: 10;
+        }
+      }
+    }
+    }
+  }
+}

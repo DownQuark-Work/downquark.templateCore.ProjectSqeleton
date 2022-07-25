@@ -1,0 +1,42 @@
+.nav-tabs {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+}
+
+.active-tab-content details{
+  input[type="checkbox"],label {cursor: pointer;}
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    &::after {
+      content: "";
+      float: right;
+    }
+  }
+  &[open] {
+    summary::after { transform: rotate(0.5turn); }
+  }
+}
+
+#offcanvasNavbarHistory ol {
+  list-style: auto;
+  list-style-position: inside;
+  padding: 0;
+  li {
+    margin:.5rem 0;
+    padding:0 .5rem;
+    &:nth-child(odd) {background-color: var(--bs-gray-200);}
+  }
+}
+
+details.assessment { margin-top: 1rem; }
+summary.manage-content-summary {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.2375rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #495057;
+}
