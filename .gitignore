@@ -29,5 +29,7 @@ _notes/.ignored/
 !.yarn/versions
 #   !.yarn/cache for Zero-Installs
 #   .pnp.* for non-Zero-Installs
-!.yarn/cache
-#.pnp.*
+# !.yarn/cache
+.pnp.*
+
+deleteme
