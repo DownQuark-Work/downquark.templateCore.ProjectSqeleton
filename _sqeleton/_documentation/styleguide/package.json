@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "description": "quarx",
+  "author": "mlnck",
+  "license": "GNU",
+  "downquarkDir": "~/.dqrx",
+  "homepage": "downquark.work",
+  "main": ".js",
+  "name": "styleguide",
+  "packageManager": "yarn@3.2.2"
+}
