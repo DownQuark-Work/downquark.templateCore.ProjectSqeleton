@@ -1,11 +1,16 @@
 {
-  "name": "documentation",
+  "name": "doqumentation",
   "version": "0.0.1",
+  "packageManager": "yarn@3.2.2",
+  "author": "mlnck",
   "description": "DownQuark Skeleton Documentation",
+  "license": "GNU",
+  "downquarkDir": "~/.dqrx",
+  "homepage": "downquark.work",
+  "private": true,
   "main": "index.js",
-  "scripts": {
-    "test": "spec"
-  },
-  "author": "",
-  "license": "ISC"
+  "scripts": { },
+  "workspaces": [
+    "styleguide/"
+  ]
 }
