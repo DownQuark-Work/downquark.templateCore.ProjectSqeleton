@@ -9,8 +9,13 @@
   "homepage": "downquark.work",
   "private": true,
   "main": "index.js",
-  "scripts": { },
   "workspaces": [
     "styleguide/"
-  ]
+  ],
+  "dependencies": {
+    "lit": "^2.2.8"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
 }

@@ -4,5 +4,11 @@
   "private": true,
   "workspaces": [
     "_sqeleton/*"
-  ]
+  ],
+  "dependencies": {
+    "lit": "^2.2.8"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
 }

@@ -7,5 +7,11 @@
   "homepage": "downquark.work",
   "main": ".js",
   "name": "styleguide",
-  "packageManager": "yarn@3.2.2"
+  "packageManager": "yarn@3.2.2",
+  "dependencies": {
+    "lit": "^2.2.8"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
 }
