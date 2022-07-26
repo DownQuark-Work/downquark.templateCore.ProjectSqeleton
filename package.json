@@ -3,7 +3,8 @@
   "packageManager": "yarn@3.2.2",
   "private": true,
   "workspaces": [
-    "_sqeleton/*"
+    "_sqeleton/*",
+    "_sqeleton/qore/_qomponents/"
   ],
   "dependencies": {
     "lit": "^2.2.8"
