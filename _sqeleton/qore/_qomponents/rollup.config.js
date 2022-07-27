@@ -28,7 +28,7 @@ export default [
 	// `file` and `format` for each target)
 	{
 		input:'atomic/1.atoms/button.ts',
-		external: ['lit'],
+		external: ['lit','lit/decorators.js'],
 		plugins: [
 			typescript() // so Rollup can convert TypeScript to JavaScript
 		],

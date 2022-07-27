@@ -1,20 +1,47 @@
-// // https://github.com/rollup/rollup-starter-lib/tree/typescript
-// // // rollup this to an iife -> which is then imported from the styleguide by a normal <script> tag... maybe
-// export const Button = () => {
-//   console.log('BUTTON!')
-// }
+import {LitElement, html, css} from 'lit';
+import {customElement, property} from 'lit/decorators.js';
 
-import { html, LitElement } from 'lit';
-import { customElement, property, state } from 'lit/decorators.js';
+@customElement("my-element")
+export class MyElement extends LitElement {
+  // Styles are scoped to this element: they won't conflict with styles
+  // on the main page or in other components. Styling API can be exposed
+  // via CSS custom properties.
+  static styles = css`
+  
+    :host {
+      display: inline-block;
+      padding: 10px;
+      background: lightgray;
+    }
+    .planet {
+      color: var(--planet-color, blue);
+    }
+  `;
 
-@customElement('word-viewer')
-class WordViewer extends LitElement {
-  // TODO: Add `idx` state
-  @property() words = 'initial value';
 
+
+  // Define reactive properties--updating a reactive property causes
+  // the component to update.
+  @property() greeting = "Hello";
+  @property() planet = "World";
+
+  // The render() method is called any time reactive properties change.
+  // Return HTML in a string template literal tagged with the `html`
+  // tag function to describe the component's internal DOM.
+  // Expressions can set attribute values, property values, event handlers,
+  // and child nodes/text.
   render() {
-    // TODO: Split the `words` by `'.'`, and from the resulting word array
-    // only show the word on index `this.idx`.
-    return html`<pre>${this.words}</pre>`;
+    return html`
+      <span @click=${this.togglePlanet}
+        >${this.greeting}
+        <span class="planet">${this.planet}</span>
+      </span>
+    `;
+  }
+
+  // Event handlers can update the state of @properties on the element
+  // instance, causing it to re-render
+  togglePlanet() {
+    this.planet = this.planet === "World" ? "Mars" : "World";
   }
 }
