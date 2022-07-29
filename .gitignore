@@ -2,6 +2,7 @@
 
 # Compiled
 src/assets/styles/css
+_dist/
 exports/.cache/**/
 exports/_deploy/**/
 exports/logs/**/
