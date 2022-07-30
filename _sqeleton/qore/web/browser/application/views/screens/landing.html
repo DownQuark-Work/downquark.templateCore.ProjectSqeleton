@@ -1,0 +1,16 @@
+<% extends("/views/_shell.html") %>
+
+<div>
+  <h3 class="text-5xl mb-5">DownQuark Sqeleton</h3>
+  <div>
+    <% if (landing.renderedAt % 2 === 0) { %>
+      <% include_partial("/views/partials/landing/even.html") %>
+      <hr />
+    <% } %>
+    <% if (landing.renderedAt % 2 !== 0) { %>
+      <% include_partial("/views/partials/landing/odd.html") %>
+      <hr />
+    <% } %>
+</div>
+
+<script src="/_assets/js/_v1/landing-get.js"></script>

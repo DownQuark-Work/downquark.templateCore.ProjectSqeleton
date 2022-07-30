@@ -1,6 +1,6 @@
 import { Drash } from '../deps.ts'
 import { unilogger } from '../deps.ts'
-import { CSRFService } from '../deps.ts'
+// import { CSRFService } from '../deps.ts'
 import { PaladinService } from '../deps.ts'
 import { RateLimiterService } from '../deps.ts'
 import { ResponseTimeService } from '../deps.ts'
@@ -12,6 +12,10 @@ export const srvRateLimit = new RateLimiterService({
 })
 
 export const srvResponseTime = new ResponseTimeService()
+
+export const srvTengine = new TengineService({
+  views_path: "../application",
+});
 
 export class LoggingService extends Drash.Service {
 

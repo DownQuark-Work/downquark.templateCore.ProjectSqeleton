@@ -1,4 +1,4 @@
-import { Drash } from '../deps.ts';
+import { Drash } from '../../deps.ts';
 
 // Create your custom error. This MUST be an extension of Error.
 export class InvalidReqParamsError extends Error {
@@ -21,7 +21,7 @@ export class InvalidPOSTReqParamsError extends Error {
 
 // Create your error handler to send JSON responses instead of Drash sending
 // an error with a stack trace
-export class DqErrorHandler extends Drash.ErrorHandler {
+export class ErrorHandler extends Drash.ErrorHandler {
   public catch(
     error: Error,
     request: Request,
