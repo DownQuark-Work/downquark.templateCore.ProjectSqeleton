@@ -1,1 +1,2 @@
 # styleguide
+`$ cd .. && cad`
