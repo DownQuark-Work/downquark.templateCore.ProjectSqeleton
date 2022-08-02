@@ -22,7 +22,7 @@ export class LoggingService extends Drash.Service {
   dt = new Date()
   // consoleLogger = new unilogger.ConsoleLogger({});
   fileLogger = new unilogger.FileLogger({ // NOTE: `file` is required here, it's the filename which logging will be sent to
-    file: `./_public/_logs/${this.dt.getFullYear()}${this.dt.getMonth()+1}.${this.dt.getDate()}.log`,
+    file: `./_assets/_logs/${this.dt.getFullYear()}${this.dt.getMonth()+1}.${this.dt.getDate()}.log`,
     tag_string: "{name} | {env} |",
     tag_string_fns: {
       name() {

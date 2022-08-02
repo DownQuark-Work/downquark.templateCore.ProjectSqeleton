@@ -1,10 +1,17 @@
 import { Drash } from '../../deps.ts';
+import { CSRFService } from '../../deps.ts'
+
 import { InvalidReqParamsError } from '../types/error_handler.ts'
+const csrf = new CSRFService(); // allows access to `csrf.token`
 
 export default class LandingResource extends Drash.Resource {
   public paths = [
     '/',
   ];
+
+  public services = {
+    POST: [csrf],
+  };
 
   public GET(request: Drash.Request, response: Drash.Response): void {
     const templateVariables = {landing:
@@ -21,17 +28,13 @@ export default class LandingResource extends Drash.Resource {
   }
 
   public POST(request: Drash.Request, response: Drash.Response): void {
-    /**
-     * for futtureCSRF Integration
-     * const token = request.headers.get("X-CSRF-TOKEN");
-    * or get the token from the cookie if it is set there
-    *
-    *   const token = request.getCookie("X-CSRF-TOKEN");
-    *
-    *    if (!token) {
-    *      console.log(`CSRF token is not set - this woud error in a real instance`)
-    *    }
-    */
+    const token = request.headers.get("X-CSRF-TOKEN");
+    // or get the token from the cookie if it is set there
+    //     const token = request.getCookie("X-CSRF-TOKEN");
+
+    if (!token) {
+      console.log(`CSRF token is not set - this woud error in a real instance`)
+    }
     return response.json({ hello: 'POST' });
   }
 
