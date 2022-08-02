@@ -3,10 +3,11 @@ import { Drash } from '../../deps.ts';
 
 export class StaticFilesResource extends Drash.Resource {
   
-  paths = ["(application)?/_assets/.*\.(jpg|png|svg|css|js)"];
+  paths = ["/_assets/.*\.(jpg|png|svg|css|js)"];
 
   public GET(request: Drash.Request, response: Drash.Response) {
     const path = new URL(request.url).pathname;
+    console.log('path', path)
 
     return response.file(`.${path}`); // response.file("./favicon.ico")
   }
