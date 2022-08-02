@@ -4,6 +4,7 @@ console.log('import.meta.url', import.meta.url)
 // import LandingResource from './resources/Landing.ts'
 import { resources } from './resources/index.ts'
 import { LoggingService, srvRateLimit, srvResponseTime, srvTengine } from './services/index.ts'
+false && console.log(srvRateLimit)
 
 // Create and run your server
 const server = new Drash.Server({
@@ -15,7 +16,8 @@ const server = new Drash.Server({
   resources,
   services: [
     new LoggingService(), new PaladinService(),
-    srvRateLimit, srvResponseTime, srvTengine
+    srvResponseTime, srvTengine,
+    // srvRateLimit,
   ],
 });
 

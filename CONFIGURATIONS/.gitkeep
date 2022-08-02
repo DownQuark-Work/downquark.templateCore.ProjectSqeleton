@@ -1,0 +1,1 @@
+- create a hash of server ports and the entity they belong to and use those when launching deno, node, etc

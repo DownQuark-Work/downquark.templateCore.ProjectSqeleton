@@ -1,6 +1,7 @@
 import { Drash } from '../../deps.ts';
-import { CSRFService } from '../../deps.ts'
+import { CSRFService, Client, WebSocketClient } from '../../deps.ts'
 import { InvalidReqParamsError } from '../types/error_handler.ts'
+
 
 import { Graph as LandingGraphQuery } from '../../../business/graph/query.ts'
 import { Graph as LandingGraphRead } from '../../../business/graph/read.ts'
@@ -21,6 +22,17 @@ export default class LandingResource extends Drash.Resource {
   };
 
   public GET(request: Drash.Request, response: Drash.Response): void {
+    
+    // to launch the websocket you must first start the browser server - wait for it to fully initiate (use process_output.txt to verify),
+    // then start the websocket server
+    // only then can you go to the browser and navigate around
+    /* Enable below when ready for ws integration:
+    const websocketClientFromBrowserNetwork = new WebSocketClient('ws://localhost:1447/websocket');
+    websocketClientFromBrowserNetwork.on("landingsocket", (e) => {
+      console.log('landingsocket websocketClientFromBrowserNetwork guid is:', e) // TODO: set this and reutilize
+      websocketClientFromBrowserNetwork.to("exposeguid", "retrieve said guid: " + e.message);
+    });
+    */
 
     // database interaction stubs
     // LandingGraphQuery.Landing.GET.setReferrer()
