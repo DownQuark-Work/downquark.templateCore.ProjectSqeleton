@@ -1,3 +1,0 @@
-[0m[32mCheck[0m file:///Users/mlnck/Documents/_dev/_dq/DownQuark/downquark.templateCore.ProjectSqeleton/_sqeleton/qore/web/browser/application/scripts/_modules/landing/get.ts
-[0m[32mBundle[0m file:///Users/mlnck/Documents/_dev/_dq/DownQuark/downquark.templateCore.ProjectSqeleton/_sqeleton/qore/web/browser/application/scripts/_modules/landing/get.ts
-[0m[32mEmit[0m "../../../network/_assets/js/_v1/_modules/landing-get.js" ([0m[38;5;245m171B[0m)
