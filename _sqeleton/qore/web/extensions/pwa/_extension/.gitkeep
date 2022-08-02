@@ -1,0 +1,3 @@
+the extension mainfest and background/content scripts / etc
+- src will be (com|trans)piled here first
+- this entire directory will be build to `_dist`

@@ -4,7 +4,8 @@
   "private": true,
   "workspaces": [
     "_sqeleton/*",
-    "_sqeleton/qore/*"
+    "_sqeleton/qore/*",
+    "_sqeleton/qore/web/extensions/*"
   ],
   "dependencies": {
     "lit": "^2.2.8"

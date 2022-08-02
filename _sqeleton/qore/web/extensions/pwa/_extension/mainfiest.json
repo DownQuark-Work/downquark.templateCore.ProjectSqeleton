@@ -1,0 +1,36 @@
+{
+  "name": "DownQuark Chrome Extension",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "permissions": [],
+  "host_permissions": [
+    "http://127.0.0.1:3000/*"
+  ],
+  "background": {
+    "service_worker": "sw.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*"
+      ],
+      "all_frames": true,
+      "css": [
+        "downquark.css"
+      ],
+      "js": [
+        "contentScript.js"
+      ]
+    }
+  ],
+  "action": {
+    "default_title": "DownQuark",
+    "default_popup": "downquark.html"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
+
