@@ -1,4 +1,5 @@
-// export * as Drash from 'https://deno.land/x/drash@v2.5.4/mod.ts';
+import { createRequire } from "https://deno.land/std@0.150.0/node/module.ts";
+export const require = createRequire(import.meta.url);
 export * as Drash from 'https://deno.land/x/drash@v2.7.0/mod.ts';
 
 // services

@@ -1,5 +1,5 @@
 import { Drash, PaladinService } from './deps.ts'
-
+console.log('import.meta.url', import.meta.url)
 // import { DqErrorHandler } from './resources/error_handler.ts'
 // import LandingResource from './resources/Landing.ts'
 import { resources } from './resources/index.ts'
