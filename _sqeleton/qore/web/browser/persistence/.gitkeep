@@ -1,0 +1,5 @@
+`ln -s <PATH/TO/{DB_TYPE}/READ> read`
+`ln -s <PATH/TO/{DB_TYPE}/QUERY> query`
+> The business layer performs logic and passes down aggregates/etc
+> The above directories contain the actual sql/aql/etc language queries.
+> Which interact with the database and return the result to be passed up to the business layer

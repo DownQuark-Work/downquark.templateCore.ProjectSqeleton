@@ -1,0 +1,1 @@
+export const UIjs = () => console.log('ui')
