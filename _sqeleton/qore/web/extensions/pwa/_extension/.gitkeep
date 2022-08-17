@@ -1,3 +1,7 @@
+[DEVELOPMENT BUILD]
+- Upload all unpacked files to chrome
+---
+
 - all **PWA** specific files will reside here
   - extension mainfest
   - background/content
