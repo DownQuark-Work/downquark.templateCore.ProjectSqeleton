@@ -16,16 +16,20 @@
       ],
       "all_frames": true,
       "css": [
-        "downquark.css"
+        "_transpiled/extension.css"
       ],
       "js": [
-        "contentScript.js"
+        "_transpiled/content-scripts.js"
       ]
     }
   ],
   "action": {
     "default_title": "DownQuark",
-    "default_popup": "downquark.html"
+    "default_popup": "html/downquark.html"
+  },
+  "options_ui": {
+    "page": "html/options.html",
+    "open_in_tab": true
   },
   "icons": {
     "16": "icon16.png",
