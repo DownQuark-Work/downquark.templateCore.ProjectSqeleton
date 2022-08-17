@@ -1,5 +1,6 @@
 {
   "name": "DownQuark Chrome Extension",
+  "description": "Blurb Pertaining to DownQuark Chrome Extension",
   "version": "0.0.1",
   "manifest_version": 3,
   "permissions": [],
@@ -12,14 +13,14 @@
   "content_scripts": [
     {
       "matches": [
-        "*"
+        "*://*/*"
       ],
       "all_frames": true,
       "css": [
-        "_transpiled/extension.css"
+        "TRANSPILED/extension.css"
       ],
       "js": [
-        "_transpiled/content-scripts.js"
+        "TRANSPILED/content-scripts.js"
       ]
     }
   ],
@@ -32,9 +33,10 @@
     "open_in_tab": true
   },
   "icons": {
-    "16": "icon16.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
+    "16": "assets/gfx/icon16.png",
+    "48": "assets/gfx/icon48.png",
+    "64": "assets/gfx/icon64.png",
+    "128": "assets/gfx/icon128.png"
   }
 }
 
