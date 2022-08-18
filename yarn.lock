@@ -1271,6 +1271,8 @@ __metadata:
     "@types/node": ^18.7.6
     lit: ^2.3.0
     rollup: ^2.77.2
+    rollup-plugin-commonjs: ^10.1.0
+    rollup-plugin-node-resolve: ^5.2.0
     rollup-plugin-scss: ^3.0.0
     rollup-plugin-terser: ^7.0.2
     rollup-plugin-typescript: ^1.0.1
