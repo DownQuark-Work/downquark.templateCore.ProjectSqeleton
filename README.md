@@ -224,6 +224,7 @@ Attempts will be made to keep this [miro board](https://miro.com/app/board/uXjVO
 │           │       ├── _extension
 │           │       │   ├── TRANSPILED
 │           │       │   │   ├── content-scripts.js
+│           │       │   │   ├── dq.pwa.umd.js
 │           │       │   │   └── extension.css
 │           │       │   ├── assets
 │           │       │   │   ├── gfx
@@ -239,13 +240,18 @@ Attempts will be made to keep this [miro board](https://miro.com/app/board/uXjVO
 │           │       │   ├── manifest.json
 │           │       │   └── sw.js
 │           │       ├── package.json
-│           │       └── src
-│           │           ├── _content
-│           │           │   └── script.ts
-│           │           ├── _scss
-│           │           │   └── extension.scss
-│           │           └── app
-│           │               └── index.ts
+│           │       ├── rollup.config.js
+│           │       ├── src
+│           │       │   ├── _components
+│           │       │   │   └── dq.qomponents.esm.js
+│           │       │   ├── _content
+│           │       │   │   └── script.ts
+│           │       │   ├── _scss
+│           │       │   │   └── extension.scss
+│           │       │   └── app
+│           │       │       ├── dq.pwa.ts
+│           │       │       └── index.ts
+│           │       └── tsconfig.json
 │           └── plugins
 │               ├── ipfs
 │               ├── serviceworkers
@@ -256,7 +262,7 @@ Attempts will be made to keep this [miro board](https://miro.com/app/board/uXjVO
 ├── package.json
 └── yarn.lock
 
-115 directories, 127 files
+116 directories, 132 files
 ```
 
 </details>
