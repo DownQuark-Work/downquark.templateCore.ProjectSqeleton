@@ -1,0 +1,1 @@
+export const DQ_PWA = 'DownQuark PWA Template Import File.'

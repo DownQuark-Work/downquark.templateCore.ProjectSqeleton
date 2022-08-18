@@ -6,7 +6,6 @@ import pkg from './package.json';
 export default [
 	// browser-friendly UMD build
 	{
-		// input: 'src/main.ts',
 		input:'atomic/1.atoms/button.ts',
 		output: {
 			name: 'dq',

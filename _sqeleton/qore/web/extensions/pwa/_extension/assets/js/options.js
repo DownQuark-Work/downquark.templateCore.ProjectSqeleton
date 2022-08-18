@@ -1,0 +1,1 @@
+console.log('options should not have to be transpiled and can be loaded directly from pwa/_extension/assets/js/')
