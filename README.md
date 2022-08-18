@@ -10,6 +10,7 @@ This readme will be updated as development continues.
 Attempts will be made to keep this [miro board](https://miro.com/app/board/uXjVOqxaA3Y=/?share_link_id=146671647169) up to date.
 
 <details><summary>Current(ish) Directory Tree</summary>
+
 ```
 .
 ├── CODE_OF_CONDUCT.md
