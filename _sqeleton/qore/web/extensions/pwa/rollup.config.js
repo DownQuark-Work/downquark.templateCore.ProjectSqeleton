@@ -16,8 +16,8 @@ export default [
 			format: 'umd'
 		},
 		plugins: [
-			resolve(),   // so Rollup can find `ms`
-			commonjs(),  // so Rollup can convert `ms` to an ES module
+			resolve(),   // so Rollup can find entrypoint
+			commonjs(),  // so Rollup can convert `entrypoint to an ES module
 			typescript() // so Rollup can convert TypeScript to JavaScript
 		]
 	},
