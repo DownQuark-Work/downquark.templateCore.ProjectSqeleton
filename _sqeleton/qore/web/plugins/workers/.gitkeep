@@ -1,0 +1,102 @@
+TODO: Move to knowledgebase as import
+TODO: Convert `js` to `ts`
+Web Workers are a simple means for web content to run scripts in background threads. The worker thread can perform tasks without interfering with the user interface.
+Once created, a worker can send messages to the JavaScript code that created it by posting messages to an event handler specified by that code (and vice versa).
+---
+A worker is an object created using a constructor (e.g. Worker()) that runs a named JavaScript file — this file contains the code that will run in the worker thread; workers run in another global context that is different from the current window. Thus, using the window shortcut to get the current global scope (instead of self) within a Worker will return an error.
+---
+ou can't directly manipulate the DOM from inside a worker, or use some default methods and properties of the window object. But you can use a large number of items available under window, including WebSockets, and data storage mechanisms like IndexedDB. See Functions and classes available to workers for more details.
+---
+
+https://serviceworke.rs/ << FOUND IT
+https://www.freecodecamp.org/news/how-webworkers-work-in-javascript-with-example/
+
+There is only one service worker per PWA, but that doesn't mean you need to place the code only in one file. A service worker can include other files using importScripts in every browser or using ECMAScript module imports in some modern browsers.
+> https://web.dev/learn/pwa/service-workers/
+> https://web.dev/service-worker-lifecycle/#updates
+> https://web.dev/es-modules-in-sw/
+
+https://github.com/itsjoesullivan/service-worker-demo
+
+https://css-tricks.com/serviceworker-for-offline/
+https://www.tutorialrepublic.com/html-tutorial/html5-web-workers.php
+
+https://blog.sessionstack.com/how-javascript-works-the-building-blocks-of-web-workers-5-cases-when-you-should-use-them-a547c0757f6a
+
+https://web.dev/new-pwa-training/
+https://web.dev/progressive-web-apps/
+
+https://web.dev/promote-install/
+https://web.dev/customize-install/
+
+https://web.dev/workers-basics/
+
+https://www.codemag.com/Article/2101071/Understanding-and-Using-Web-Workers
+
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
+- https://mdn.github.io/dom-examples/web-workers/simple-web-worker/
+- https://github.com/mdn/dom-examples/tree/master/web-workers
+- https://github.com/mdn/dom-examples/tree/master/streams
+
+https://web.dev/building-a-pwa-at-google-part-1/
+
+https://googlechrome.github.io/samples/service-worker/
+https://googlechrome.github.io/samples/service-worker/basic/
+https://github.com/GoogleChrome/samples/tree/gh-pages/service-worker
+https://googlechrome.github.io/samples/service-worker/
+
+
+https://www.tutorialspoint.com/html5/html5_web_workers.htm
+
+https://developer.mozilla.org/en-US/docs/Web/API/Worker
+https://github.com/homam/service-workers-example/blob/master/resources.md
+
+https://web.dev/reliable/ <<-- model this
+https://www.thecodeship.com/web-development/guide-service-worker-pitfalls-best-practices/
+
+https://extensiblewebmanifesto.org/ <--
+https://web.dev/learn/pwa/capabilities/
+https://www.chromium.org/teams/web-capabilities-fugu/
+https://web.dev/off-main-thread/
+
+https://serviceworkies.com/
+
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
+
+https://github.com/GoogleChrome/samples/tree/gh-pages/service-worker
+https://developer.chrome.com/docs/workbox/service-worker-overview/
+https://developer.chrome.com/docs/workbox/using-workbox-window/
+
+
+https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers/sw101.png
+https://web.dev/proxx-announce/#web-workers
+https://surma.dev/things/when-workers/
+
+
+https://jakearchibald.com/2014/offline-cookbook/
+
+It’s worth noting that the specification mentions three types of Web Workers:
+
+Dedicated Workers
+Shared Workers
+Service workers
+Dedicated Workers
+Dedicated Web Workers are instantiated by the main process and can only communicate with it.
+
+
+Dedicated Workers browser support
+Shared Workers
+Shared workers can be reached by all processes running on the same origin (different browser tabs, iframes or other shared workers).
+
+
+Shared Workers browser support
+Service Workers
+A Service Worker is an event-driven worker registered against an origin and a path. It can control the web page/site it is associated with, intercepting and modifying the navigation and resource requests, and caching resources in a very granular fashion to give you great control over how your app behaves in certain situations (e.g. when the network is not available.)
+
+
+Service Workers browser support
+In this post, we’ll focus on Dedicated Workers and refer to them as “Web Workers” or “Workers”.
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
+
+https://github.com/mdn/fibonacci-worker/
