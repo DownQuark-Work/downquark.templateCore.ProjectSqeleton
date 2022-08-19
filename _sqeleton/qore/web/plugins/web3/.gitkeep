@@ -1,3 +1,3 @@
-TODO: Create streams and web-crypto in knowledgebase, move these to that dir as import
-https://github.com/mdn/dom-examples/tree/master/streams
-https://github.com/mdn/dom-examples/tree/master/web-crypto
+TODO: Symlink to (upcoming) `lib_modules` directory for access to:
+- streams
+- web-crypto
