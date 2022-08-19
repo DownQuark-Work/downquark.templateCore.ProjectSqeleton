@@ -1,4 +1,6 @@
 TODO: Move to knowledgebase as import
+  - These can be shared between projects
+
 TODO: Convert `js` to `ts`
 Web Workers are a simple means for web content to run scripts in background threads. The worker thread can perform tasks without interfering with the user interface.
 Once created, a worker can send messages to the JavaScript code that created it by posting messages to an event handler specified by that code (and vice versa).

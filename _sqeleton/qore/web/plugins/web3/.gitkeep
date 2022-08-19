@@ -1,3 +1,8 @@
 TODO: Symlink to (upcoming) `lib_modules` directory for access to:
 - streams
 - web-crypto
+
+File naming will be along the lines of:
+- `/__spec/<layer>.<TestName>.ts`
+- `/_trigger/<scripts|tasks>/<layer>.<NAME>.ts`
+- `<whisper|swarm|ipfs>/<layer>.<NAME>.ts`
