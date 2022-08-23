@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta charset="UTF-8">
+  <script>
+    const customerData = [
+      { ssn: '444-44-4444', name: 'Alice', age: 35, email: 'alice@company.com' },
+      { ssn: '555-55-5555', name: 'Bob', age: 32, email: 'bob@home.org' }
+    ]
+    const configIndexedDB_dq = {
+      _DEBUG: 1,
+      _dbName: 'dqdb',
+      _dbVersion: 1,
+      customers: { // object store
+        keyPath: 'ssn',
+        indexes: [
+          ['name', 'name', { unique: false }],
+          ['email', 'email', { unique: true }]
+        ],
+        data: customerData
+      },
+      names: { // object store
+        // defaults to { autoIncrement : true }
+        data: customerData.map(itm => itm.name) // ['Alice','Bob']
+      },
+      dqStore: { keyPath: 'dqKeyPath', } // empty object store
+    }
+  </script>
+</head>
+
+<body>
+	<div id="app">To run: `cd &lt;HERE&gt && caddy` - then navigate to `localhost:port/test.html` </div>
+	<p>
+    Click me <b>first</b> to
+    <button id="btn-loaded-db-content" type="button">Ensure Database Content Loaded</button>
+    <br/>The above button will also randomize the below buttons
+    <br/>
+    <hr/>
+    <br/>
+    <button disabled id="btn-add-db-content" type="button">Add <span>nothing</span></button>
+    <br/><br/>
+    <button disabled id="btn-get-db-content" type="button">Get <span>nothing</span></button>
+    <br/><br/>
+    <button disabled id="btn-delete-db-content" type="button">Delete <span>nothing</span></button>
+    <br/><br/>
+    <button disabled id="btn-update-db-content" type="button">Update <span>nothing</span></button>
+    <br/>
+    <hr/>
+    <br/>
+    <button disabled id="btn-getall-customer-content" type="button">Get All <span>Customer</span> Records</button>
+    <br/><br/>
+    <button disabled id="btn-create-array" type="button">Create <span>Customer</span> Array</button>
+    <br/><br/>
+  </p>
+  <textarea style="white-space: pre-wrap">...</textarea>
+
+  <script type="module" src="./_controller.js"></script>
+  <script src="./views/test.js"></script>
+</body>
+
+</html>
