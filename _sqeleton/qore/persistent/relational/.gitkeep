@@ -1,16 +1,65 @@
 https://mariadb.com/kb/en/documentation/
+- https://mariadb.com/kb/en/sql-statements/
 - https://mariadb.com/kb/en/sql-statements-structure/
 
 https://mariadb.com/kb/en/variables-and-modes/
+- https://mariadb.com/kb/en/built-in-functions/
+- https://mariadb.com/kb/en/secondary-functions/
 - https://mariadb.com/kb/en/user-defined-variables/
 - https://mariadb.com/kb/en/user-defined-functions/
 
+---
 https://mariadb.com/kb/en/programming-customizing-mariadb/
 - https://mariadb.com/kb/en/views/
 - https://mariadb.com/kb/en/stored-routines/
 - https://mariadb.com/kb/en/triggers-events/
+---
 
 https://mariadb.com/kb/en/training-tutorials/
 https://mariadb.com/kb/en/useful-mariadb-queries/
 
+https://mariadb.com/kb/en/information-functions/
+- https://mariadb.com/kb/en/rownum/ # LIMIT and ROWNUM()
+- https://mariadb.com/kb/en/benchmark/
+- https://mariadb.com/kb/en/procedure-analyse/
+- https://mariadb.com/kb/en/found_rows/
+- https://mariadb.com/kb/en/default/
+https://mariadb.com/kb/en/events/ # run at intervals
+
 https://mariadb.com/kb/en/plugins/
+- https://mariadb.com/kb/en/other-plugins/
+- https://mariadb.com/kb/en/feedback-plugin/
+- https://mariadb.com/kb/en/disks-plugin/
+- https://mariadb.com/kb/en/query-response-time-plugin/
+https://mariadb.com/kb/en/temporal-tables/
+https://mariadb.com/kb/en/pseudo-columns/ # _rowid is an alias for the primary key column
+https://mariadb.com/kb/en/geographic-geometric-features/
+https://mariadb.com/kb/en/window-functions/
+- https://mariadb.com/kb/en/window-functions-overview/
+https://mariadb.com/kb/en/date-time-functions/
+https://mariadb.com/kb/en/encryption-hashing-and-compression-functions/
+https://mariadb.com/kb/en/case-operator/
+https://mariadb.com/kb/en/transactions/
+
+
+---
+https://mariadb.com/kb/en/help-command/
+https://mariadb.com/kb/en/sequence-overview/ # `CREATE SEQUENCE s START WITH 100 INCREMENT BY 10;`
+https://mariadb.com/kb/en/creating-using-views/
+- https://mariadb.com/kb/en/view-algorithms/
+- https://mariadb.com/kb/en/uuid/
+- https://mariadb.com/kb/en/sys_guid/
+- https://mariadb.com/kb/en/encrypt/
+https://mariadb.com/kb/en/dynamic-columns/ # allows one to store different sets of columns for each row in a table
+https://mariadb.com/kb/en/user-defined-variables/
+- https://mariadb.com/kb/en/declare-variable/
+https://mariadb.com/kb/en/stored-procedure-overview/
+- https://mariadb.com/kb/en/create-procedure/
+- https://mariadb.com/kb/en/stored-function-overview/
+  - https://mariadb.com/kb/en/programmatic-compound-statements/
+- https://mariadb.com/kb/en/stored-aggregate-functions/
+- https://mariadb.com/kb/en/show-procedure-code/
+https://mariadb.com/kb/en/server-monitoring-logs/
+- https://mariadb.com/kb/en/overview-of-mariadb-logs/
+- https://mariadb.com/kb/en/writing-logs-into-tables/
+- https://mariadb.com/kb/en/error-log/

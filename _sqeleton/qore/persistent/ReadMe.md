@@ -4,7 +4,8 @@
 > can run on any port that a FE is running on
 - `ViewTest.js` is a pseudo-business-layer
 ## MariaDB \[relational]
-https://mariadb.com/kb/en/full-list-of-mariadb-options-system-and-status-variables/
+> https://mariadb.com/kb/en/getting-started-with-the-nodejs-connector/
+> > **_https://deno.land/x/mysql@v2.10.2/mod.ts_**
 ```
 % brew install mariadb
 % brew services run mariadb
