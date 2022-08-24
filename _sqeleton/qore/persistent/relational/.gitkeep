@@ -44,6 +44,8 @@ https://mariadb.com/kb/en/transactions/
 
 ---
 https://mariadb.com/kb/en/help-command/
+- http://code.openark.org/blog/mysql/mysql-joins-on-vs-using-vs-theta-style
+  - # Is the special case where we join tables on columns of the same name, we can make a shortcut and use USING:
 https://mariadb.com/kb/en/sequence-overview/ # `CREATE SEQUENCE s START WITH 100 INCREMENT BY 10;`
 https://mariadb.com/kb/en/creating-using-views/
 - https://mariadb.com/kb/en/view-algorithms/
@@ -63,3 +65,10 @@ https://mariadb.com/kb/en/server-monitoring-logs/
 - https://mariadb.com/kb/en/overview-of-mariadb-logs/
 - https://mariadb.com/kb/en/writing-logs-into-tables/
 - https://mariadb.com/kb/en/error-log/
+
+---
+https://hevodata.com/learn/schema-example/#et
+https://www.netthruoffice.com/doc/db-entity-diagram.htm
+https://www.softwareideas.net/en/help/resources
+https://www.softwareideas.net/c/1054/data-models-erd-
+https://online.visual-paradigm.com/community/?type=ChenEntityRelationshipDiagram,ERDiagram

@@ -1,2 +1,7 @@
 💭 consider updating naming structure to be:
 `<main|side|test><CONTRACT_NAME>.sol`
+
+BEFORE BEGINNING: Look into:
+- https://developers.flow.com/
+- https://developers.flow.com/cadence
+- https://github.com/emerald-dao/beginner-cadence-course
