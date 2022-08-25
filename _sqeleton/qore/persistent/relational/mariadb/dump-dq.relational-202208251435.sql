@@ -38,15 +38,6 @@ PARTITIONS 12;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `dq.system`
---
-
-LOCK TABLES `dq.system` WRITE;
-/*!40000 ALTER TABLE `dq.system` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dq.system` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `loqation`
 --
 
@@ -62,15 +53,6 @@ CREATE TABLE `loqation` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `loqation`
---
-
-LOCK TABLES `loqation` WRITE;
-/*!40000 ALTER TABLE `loqation` DISABLE KEYS */;
-/*!40000 ALTER TABLE `loqation` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `member`
 --
 
@@ -84,15 +66,25 @@ CREATE TABLE `member` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 PAGE_CHECKSUM=1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `member`
---
-
-LOCK TABLES `member` WRITE;
-/*!40000 ALTER TABLE `member` DISABLE KEYS */;
-/*!40000 ALTER TABLE `member` ENABLE KEYS */;
-UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'IGNORE_SPACE,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER memberadded
+AFTER INSERT
+ON `member` FOR EACH ROW
+  INSERT INTO qollection (`key.id.member`)
+    VALUES (NEW.id) */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `qollection`
@@ -113,15 +105,6 @@ CREATE TABLE `qollection` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `qollection`
---
-
-LOCK TABLES `qollection` WRITE;
-/*!40000 ALTER TABLE `qollection` DISABLE KEYS */;
-/*!40000 ALTER TABLE `qollection` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `qomment`
 --
 
@@ -136,15 +119,6 @@ CREATE TABLE `qomment` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 PAGE_CHECKSUM=1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `qomment`
---
-
-LOCK TABLES `qomment` WRITE;
-/*!40000 ALTER TABLE `qomment` DISABLE KEYS */;
-/*!40000 ALTER TABLE `qomment` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `qrx`
@@ -169,15 +143,6 @@ CREATE TABLE `qrx` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `qrx`
---
-
-LOCK TABLES `qrx` WRITE;
-/*!40000 ALTER TABLE `qrx` DISABLE KEYS */;
-/*!40000 ALTER TABLE `qrx` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `tag`
 --
 
@@ -192,15 +157,6 @@ CREATE TABLE `tag` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tag`
---
-
-LOCK TABLES `tag` WRITE;
-/*!40000 ALTER TABLE `tag` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tag` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `tag.qrx`
 --
 
@@ -212,15 +168,6 @@ CREATE TABLE `tag.qrx` (
   `id.tag` uuid NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 PAGE_CHECKSUM=1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tag.qrx`
---
-
-LOCK TABLES `tag.qrx` WRITE;
-/*!40000 ALTER TABLE `tag.qrx` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tag.qrx` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Temporary table structure for view `view.system.queries`
@@ -271,4 +218,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-25 13:35:31
+-- Dump completed on 2022-08-25 14:35:45
