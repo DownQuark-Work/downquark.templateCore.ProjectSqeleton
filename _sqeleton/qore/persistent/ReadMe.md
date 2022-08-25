@@ -34,6 +34,19 @@
 # check which ports are being used
 % nmap -p 1-65535 --open localhost
 % sudo lsof -P -i -n -sTCP:LISTEN
+
+# BACK UP
+% /opt/homebrew/opt/mariadb/bin/mysqld_safe --datadir=/opt/homebrew/var/mysql --port 3366
+% mysql -u root -p -h localhost -P 3366 --protocol tcp
+# # Dump a single db
+% mysqldump --user=admin_backup --password --lock-tables --databases db1 > /data/backup/db1.sql
+# # Dump ALL dbs
+% mysqldump --user=admin_backup --password --lock-tables --all-databases > /data/backup/dbs.sql
+
+# enable binary logs
+# # start server with the following
+ % /opt/homebrew/opt/mariadb/bin/mysqld_safe --datadir=/opt/homebrew/var/mysql --port 3366 --log-bin
+
 ```
 ## ArangoDb \[graph]
 ## QuestDB \[time-series]
