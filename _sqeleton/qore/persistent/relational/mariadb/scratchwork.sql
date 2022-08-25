@@ -50,14 +50,6 @@ SELECT NEXTVAL(sqnc); --- continue running the previous query
 
 
   
-  SET @salt = SHA2('password',512);
-SET @encrypted = AES_ENCRYPT('downquark',);
-SELECT LENGTH(@salt), LENGTH(COMPRESS(@salt)), LENGTH(UNCOMPRESS(COMPRESS(@salt)));
-SELECT @salt, COMPRESS(@salt), UNCOMPRESS(COMPRESS(@salt)), @salt = UNCOMPRESS(COMPRESS(@salt));
-SELECT @encrypted;
-SELECT AES_DECRYPT(@encrypted,@salt);
-
-
 SELECT `quark` FROM `qrx`;
   
 /*
@@ -100,7 +92,7 @@ SELECT * FROM `dq.system` FOR SYSTEM_TIME ALL;
 select *,row_start,row_end from `dq.system` for system_time all;
 
 CREATE VIEW `view.system.queries` AS SELECT * FROM `dq.system` FOR SYSTEM_TIME BETWEEN (NOW() - INTERVAL 1 HOUR) AND NOW();
--- SELECT * FROM `view.system.queries`;
+SELECT * FROM `view.system.queries`;
 
 SELECT SYS_GUID();
 
@@ -121,6 +113,31 @@ END; //
 DELIMITER ;
 */
 
+# log tables
+SELECT * FROM information_schema.tables WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME  LIKE '%log%';
+
+SET GLOBAL log_output='TABLE';
+SET GLOBAL general_log=1;
+SET GLOBAL slow_query_log=1;
+
+SELECT * FROM mysql.slow_log;
+
+
+SELECT * FROM mysql.general_log;
+TRUNCATE TABLE mysql.general_log;
+SELECT * FROM mysql.general_log;
+
+SET SESSION sql_log_bin = 1;
+
+SHOW BINARY LOGS;
+PURGE BINARY LOGS;
+SHOW BINARY LOGS;
+
+SHOW MASTER LOGS;
+
+SET GLOBAL general_log=0;
+SET GLOBAL slow_query_log=0;
+SET SESSION sql_log_bin = 0;
 
 /* stored function 1
 DELIMITER //
@@ -188,7 +205,6 @@ DELIMITER ;
   END;
  */
 
-
 /* event
 SET GLOBAL event_scheduler = ON;
 CREATE EVENT test_event 
@@ -197,7 +213,21 @@ CREATE EVENT test_event
  */
 /***********************************/
 
+
+CREATE DEFINER=`root`@`localhost` TRIGGER memberadded
+AFTER INSERT
+ON `member` FOR EACH ROW
+  INSERT INTO qollection (`key.id.member`)
+    VALUES (NEW.id)
+
 --- SHOW CREATE FUNCTION
+
+SET @salt = SHA2('password',512);
+SET @encrypted = AES_ENCRYPT('downquark',);
+SELECT LENGTH(@salt), LENGTH(COMPRESS(@salt)), LENGTH(UNCOMPRESS(COMPRESS(@salt)));
+SELECT @salt, COMPRESS(@salt), UNCOMPRESS(COMPRESS(@salt)), @salt = UNCOMPRESS(COMPRESS(@salt));
+SELECT @encrypted;
+SELECT AES_DECRYPT(@encrypted,@salt);
 
 -- show engine aria status
 show engine innoDB status;
