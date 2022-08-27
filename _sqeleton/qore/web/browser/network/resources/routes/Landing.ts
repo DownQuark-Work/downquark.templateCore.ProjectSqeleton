@@ -10,6 +10,8 @@ import { Relational as RelationalGraphRead } from '../../../business/relational/
 import { TimeSeries as TimeSeriesGraphQuery } from '../../../business/timeseries/query.ts'
 import { TimeSeries as TimeSeriesGraphRead } from '../../../business/timeseries/read.ts'
 
+import { RDBMS_View_Landing } from '../../../business/relational/_views/landing.ts'
+
 const csrf = new CSRFService(); // allows access to `csrf.token`
 
 export default class LandingResource extends Drash.Resource {
@@ -21,12 +23,13 @@ export default class LandingResource extends Drash.Resource {
     POST: [csrf],
   };
 
-  public GET(request: Drash.Request, response: Drash.Response): void {
+  public async GET(_request: Drash.Request, response: Drash.Response): Promise<void> {
     
     // to launch the websocket you must first start the browser server - wait for it to fully initiate (use process_output.txt to verify),
     // then start the websocket server
     // only then can you go to the browser and navigate around
     /* Enable below when ready for ws integration:
+      // better: move this into the websocket resouce. How databases are being handled
     const websocketClientFromBrowserNetwork = new WebSocketClient('ws://localhost:1447/websocket');
     websocketClientFromBrowserNetwork.on("landingsocket", (e) => {
       console.log('landingsocket websocketClientFromBrowserNetwork guid is:', e) // TODO: set this and reutilize
@@ -42,9 +45,14 @@ export default class LandingResource extends Drash.Resource {
     // TimeSeriesGraphQuery.Landing.GET.qryTime()
     // TimeSeriesGraphRead.Landing.GET.init()
 
+
+    const specifiedMember = await RDBMS_View_Landing.getSpecifiedMember('3af6e4f0-24a4-11ed-9cf0-c29d42d3cfc8')
+
+    
     const templateVariables = {landing:
       {
         renderedAt: Date.now(),
+        databaseMembers: `MariaDb Query: ${specifiedMember.username}`,
         landingGraphQuery: LandingGraphQuery.Landing.GET.setReferrer(),
         landingGraphRead: LandingGraphRead.Landing.GET.init(),
         relationalGraphQuery: RelationalGraphQuery.Landing.GET.setVisitorInfo(),

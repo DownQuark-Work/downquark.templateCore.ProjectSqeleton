@@ -73,3 +73,12 @@ https://www.netthruoffice.com/doc/db-entity-diagram.htm
 https://www.softwareideas.net/en/help/resources
 https://www.softwareideas.net/c/1054/data-models-erd-
 https://online.visual-paradigm.com/community/?type=ChenEntityRelationshipDiagram,ERDiagram
+
+---
+For use with: **_https://deno.land/x/mysql@v2.10.2/mod.ts_**
+"??" is an identifier placeholder. It will be replaced by something like "`value`"
+"?" is a value placeholder. It will be replaced with a value wrapped in a delimiter appropriate for the value type
+```
+Where.expr("?? = ? AND ?? = ?", "name", "foo", "user.age", 10);
+// `name` = "foo" AND `user`.`age` = 10
+```
