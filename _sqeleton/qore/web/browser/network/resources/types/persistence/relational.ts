@@ -1,4 +1,4 @@
-import { Drash, MariaDb } from "../../../deps.ts";
+import { MariaDb } from "../../../deps.ts";
 
 export const mariaDb = await new MariaDb().connect({
   hostname: "127.0.0.1",
@@ -8,12 +8,12 @@ export const mariaDb = await new MariaDb().connect({
   password: "root",
 });
 
-export class PersistRelationalResource extends Drash.Resource {
-  public paths = ['/api/sql/v1',];
+// export class PersistRelationalResource extends Drash.Resource {
+//   public paths = ['/api/sql/v1',];
 
-  public async GET(_request: Drash.Request, response: Drash.Response): Promise<void> {
-    const qry = await mariaDb.execute('SELECT username FROM member')
-    const qryResult = {...qry, _USAGE: 'As endpoints available for an API:'}
-    return response.json(qryResult)
-  }
-}
+//   public async GET(_request: Drash.Request, response: Drash.Response): Promise<void> {
+//     const qry = await mariaDb.execute('SELECT username FROM member')
+//     const qryResult = {...qry, _USAGE: 'As endpoints available for an API:'}
+//     return response.json(qryResult)
+//   }
+// }

@@ -5,7 +5,7 @@ import { RDBMS_View_Database } from '../../../business/relational/_views/databas
 
 const csrf = new CSRFService(); // allows access to `csrf.token`
 
-export default class LandingResource extends Drash.Resource {
+export default class DatabaseResource extends Drash.Resource {
   public paths = [
     '/db/relational',
   ];
