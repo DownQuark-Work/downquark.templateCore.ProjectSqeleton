@@ -6,9 +6,6 @@ ReadUsers.Connect(mariaDb)
 const getMembers = ReadUsers.getMembers
 
 export const RelationalDB = {
-  API: {
-    
-  },
   View: {
     Database: {
       getMembers

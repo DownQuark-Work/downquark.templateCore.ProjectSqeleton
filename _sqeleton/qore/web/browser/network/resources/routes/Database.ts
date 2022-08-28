@@ -17,10 +17,12 @@ export default class LandingResource extends Drash.Resource {
   public async GET(_request: Drash.Request, response: Drash.Response): Promise<void> {
   
     const specifiedMember = await RDBMS_View_Database.getSpecifiedMember('3af6e4f0-24a4-11ed-9cf0-c29d42d3cfc8')
+    const allMembers = await RDBMS_View_Database.getAllMembers()
     const templateVariables = {relational:
       {
         renderedAt: Date.now(),
-        databaseMembers: `MariaDb Query: ${specifiedMember.username}`,
+        databaseMember: `MariaDb Query: ${specifiedMember.username}`,
+        databaseAllMembers: `MariaDb Query 2: ${JSON.stringify(allMembers)}`
       }
     }
 
