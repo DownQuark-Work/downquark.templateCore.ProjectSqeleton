@@ -2,16 +2,6 @@ import { Drash } from '../../deps.ts';
 import { CSRFService, Client, WebSocketClient } from '../../deps.ts'
 import { InvalidReqParamsError } from '../types/error_handler.ts'
 
-
-import { Graph as LandingGraphQuery } from '../../../business/graph/query.ts'
-import { Graph as LandingGraphRead } from '../../../business/graph/read.ts'
-import { Relational as RelationalGraphQuery } from '../../../business/relational/query.ts'
-import { Relational as RelationalGraphRead } from '../../../business/relational/read.ts'
-import { TimeSeries as TimeSeriesGraphQuery } from '../../../business/timeseries/query.ts'
-import { TimeSeries as TimeSeriesGraphRead } from '../../../business/timeseries/read.ts'
-
-import { RDBMS_View_Landing } from '../../../business/relational/_views/landing.ts'
-
 const csrf = new CSRFService(); // allows access to `csrf.token`
 
 export default class LandingResource extends Drash.Resource {
@@ -23,7 +13,7 @@ export default class LandingResource extends Drash.Resource {
     POST: [csrf],
   };
 
-  public async GET(_request: Drash.Request, response: Drash.Response): Promise<void> {
+  public GET(_request: Drash.Request, response: Drash.Response): void {
     
     // to launch the websocket you must first start the browser server - wait for it to fully initiate (use process_output.txt to verify),
     // then start the websocket server
@@ -37,28 +27,10 @@ export default class LandingResource extends Drash.Resource {
     });
     */
 
-    // database interaction stubs
-    // LandingGraphQuery.Landing.GET.setReferrer()
-    // LandingGraphRead.Landing.GET.init()
-    // RelationalGraphQuery.Landing.GET.setVisitorInfo()
-    // RelationalGraphRead.Landing.GET.init()
-    // TimeSeriesGraphQuery.Landing.GET.qryTime()
-    // TimeSeriesGraphRead.Landing.GET.init()
-
-
-    const specifiedMember = await RDBMS_View_Landing.getSpecifiedMember('3af6e4f0-24a4-11ed-9cf0-c29d42d3cfc8')
-
-    
     const templateVariables = {landing:
       {
         renderedAt: Date.now(),
-        databaseMembers: `MariaDb Query: ${specifiedMember.username}`,
-        landingGraphQuery: LandingGraphQuery.Landing.GET.setReferrer(),
-        landingGraphRead: LandingGraphRead.Landing.GET.init(),
-        relationalGraphQuery: RelationalGraphQuery.Landing.GET.setVisitorInfo(),
-        relationalGraphRead: RelationalGraphRead.Landing.GET.init(),
-        timeSeriesGraphQuery: TimeSeriesGraphQuery.Landing.GET.qryTime(),
-        timeSeriesGraphRead: TimeSeriesGraphRead.Landing.GET.init(),
+        randomNum: Math.random(),
         nestedPageName: { // example of `/landing/nested-page-name/`
           nestedPageKey: 'nested page value'
         }

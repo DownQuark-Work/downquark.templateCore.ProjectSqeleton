@@ -1,3 +1,4 @@
+import DatabaseResource from './routes/Database.ts'
 import LandingResource from './routes/Landing.ts'
 
 import { BodyParsingResource } from './types/requests.ts'
@@ -8,6 +9,7 @@ import { WebSocketResource } from './types/web_socket.ts'
 import { PersistRelationalResource } from './types/persistence/relational.ts'
 
 export const resources = [
+  DatabaseResource,
   LandingResource,
   BodyParsingResource,
   PersistRelationalResource,

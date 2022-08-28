@@ -10,7 +10,7 @@ export const RelationalDB = {
     
   },
   View: {
-    Landing: {
+    Database: {
       getMembers
     },
   }
