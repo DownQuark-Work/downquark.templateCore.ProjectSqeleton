@@ -1,0 +1,4 @@
+awating 3.10
+> ArangoDB 3.9.x does not run on Apple silicon (e.g. M1 chips). 3.8.x and older versions do work via Rosetta 2 emulation, and 3.10.x has native ARM support.
+
+https://www.arangodb.com/docs/stable/installation-mac-osx.html#homebrew
