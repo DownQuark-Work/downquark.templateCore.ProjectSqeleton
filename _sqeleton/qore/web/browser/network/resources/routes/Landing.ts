@@ -15,6 +15,7 @@ export default class LandingResource extends Drash.Resource {
 
   public GET(_request: Drash.Request, response: Drash.Response): void {
     
+    // TODO: MOVE this to its own page for demo
     // to launch the websocket you must first start the browser server - wait for it to fully initiate (use process_output.txt to verify),
     // then start the websocket server
     // only then can you go to the browser and navigate around
