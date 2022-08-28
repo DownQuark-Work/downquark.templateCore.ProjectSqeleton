@@ -12,6 +12,9 @@ export { RateLimiterService } from "https://deno.land/x/drash@v2.7.0/src/service
 export { ResponseTimeService } from 'https://deno.land/x/drash@v2.7.0/src/services/response_time/response_time.ts'
 export { TengineService } from 'https://deno.land/x/drash@v2.7.0/src/services/tengine/tengine.ts'
 
+// database
+export { Client as MariaDb } from "https://deno.land/x/mysql@v2.10.2/mod.ts"
+
 // utils
 import { createRequire } from "https://deno.land/std@0.150.0/node/module.ts";
 export const require = createRequire(import.meta.url);

@@ -1,7 +1,6 @@
 import { Drash, PaladinService } from './deps.ts'
 console.log('import.meta.url', import.meta.url)
 // import { DqErrorHandler } from './resources/error_handler.ts'
-// import LandingResource from './resources/Landing.ts'
 import { resources } from './resources/index.ts'
 import { LoggingService, srvRateLimit, srvResponseTime, srvTengine } from './services/index.ts'
 false && console.log(srvRateLimit)

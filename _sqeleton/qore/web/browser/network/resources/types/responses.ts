@@ -1,4 +1,3 @@
-import { DrashResponse } from "https://deno.land/x/drash@v2.5.4/src/http/response.ts";
 import { Drash } from "../../deps.ts";
 
 export class ResponseResource extends Drash.Resource {
