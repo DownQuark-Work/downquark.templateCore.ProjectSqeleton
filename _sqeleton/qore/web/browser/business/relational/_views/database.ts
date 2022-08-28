@@ -1,4 +1,5 @@
 import { RelationalDB } from '../../../persistence/relational/index.ts'
+
 const RDBMS = RelationalDB.View.Database
 
 export const getAllMembers = async () => {

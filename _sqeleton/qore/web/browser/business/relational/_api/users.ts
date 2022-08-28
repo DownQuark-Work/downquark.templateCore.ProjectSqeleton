@@ -1,7 +1,8 @@
 import { RelationalDB } from '../../../persistence/relational/index.ts'
 import { getAllMembers } from '../_views/database.ts'
 
-const RDBMS = RelationalDB.View.Database
+const RDBMS = RelationalDB.API.v1.Users // validate this works
+// const RDBMS = RelationalDB.View.Database // works if above doesn't
 
 const customLogicToReturnSpecificGUID = async () => {
   const allMembers = await RDBMS.getMembers('username','downquark')

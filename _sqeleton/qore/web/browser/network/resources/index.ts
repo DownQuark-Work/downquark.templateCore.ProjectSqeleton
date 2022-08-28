@@ -1,7 +1,8 @@
-import DatabaseResource from './routes/Database.ts'
-import LandingResource from './routes/Landing.ts'
+import RouteResourceDatabase from './routes/Database.ts'
+import RouteResourceLanding from './routes/Landing.ts'
 
 import { ApiResource } from './types/api/index.ts'
+import { ApiMetricsResource } from './types/api/metrics.ts'
 import { ApiUsersResource } from './types/api/users.ts'
 import { BodyParsingResource } from './types/requests.ts'
 export { ErrorHandler } from './types/error_handler.ts'
@@ -11,11 +12,13 @@ import { WebSocketResource } from './types/web_socket.ts'
 
 export const resources = [
   ApiResource,
+  ApiMetricsResource,
   ApiUsersResource,
-  DatabaseResource,
-  LandingResource,
   BodyParsingResource,
   ResponseResource,
   StaticFilesResource,
   WebSocketResource,
+
+  RouteResourceDatabase,
+  RouteResourceLanding,
 ]
