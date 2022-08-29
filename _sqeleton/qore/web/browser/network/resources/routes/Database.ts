@@ -1,6 +1,7 @@
 import { Drash } from '../../deps.ts';
 import { CSRFService } from '../../deps.ts'
 
+import { GDBMS_View_Database } from '../../../business/graph/_views/database.ts'
 import { RDBMS_View_Database } from '../../../business/relational/_views/database.ts'
 import { TSDBMS_View_Database } from '../../../business/timeseries/_views/database.ts'
 
@@ -17,6 +18,7 @@ export default class DatabaseResource extends Drash.Resource {
 
   public async GET(request: Drash.Request, response: Drash.Response): Promise<void> {
     const templateVariables = {
+      graph:{renderedAt:0, userTraits:'grf'},
       relational:{renderedAt:0,databaseMember:'',databaseAllMembers:''},
       timeseries:{renderedAt:0,showFive:''},
     }
@@ -29,6 +31,15 @@ export default class DatabaseResource extends Drash.Resource {
         renderedAt: Date.now(),
         databaseMember: `MariaDb Query: ${specifiedMember.username}`,
         databaseAllMembers: `MariaDb Query 2: ${JSON.stringify(allMembers)}`
+      }
+    }
+
+    // GRAPH
+    if(dbType === 'graph') {
+      const usrTraits = await GDBMS_View_Database.getBatchedTraits()
+      templateVariables.graph = {
+        renderedAt: Date.now(),
+        userTraits: `Graph Query: ${JSON.stringify(usrTraits)}`
       }
     }
 

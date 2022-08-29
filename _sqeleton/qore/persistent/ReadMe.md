@@ -3,52 +3,30 @@
 ## IndexedDB \[browser]
 > can run on any port that a FE is running on
 - `ViewTest.js` is a pseudo-business-layer
+
 ## MariaDB \[relational]
 > https://mariadb.com/kb/en/getting-started-with-the-nodejs-connector/
 > > **_https://deno.land/x/mysql@v2.10.2/mod.ts_**
-```
-% brew install mariadb
-% brew services run mariadb
-% sudo mysql -u root # IMPORTANT: first login must be done through sudo
-% GRANT ALL PRIVILEGES on *.* to 'root'@'localhost' IDENTIFIED BY '<PASSWORD>'; # replace <PASSWORD> with desired mysql root password
-% FLUSH PRIVILEGES;
-% exit
-% sudo service mysql restart # good to go
-
-% # recommended to launch mariadb on another part to avoid namespace conflicts when working on this architecture
-% /opt/homebrew/opt/mariadb/bin/mysqld_safe --datadir=/opt/homebrew/var/mysql --port 3366
-% mysql -u root -p -h localhost -P 3366 --protocol tcp
-% # at this point you can also access the db via a GUI
-% # to kill the above instance:
-% pkill -f mariadb
-
-# extra info
-% brew services --help 
-% brew services list
-% brew services info mariadb
-% brew services run mariadb
-% brew services info mariadb 
-% brew services stop mariadb
-% brew services list
-
-# check which ports are being used
-% nmap -p 1-65535 --open localhost
-% sudo lsof -P -i -n -sTCP:LISTEN
-
-# BACK UP
-% /opt/homebrew/opt/mariadb/bin/mysqld_safe --datadir=/opt/homebrew/var/mysql --port 3366
-% mysql -u root -p -h localhost -P 3366 --protocol tcp
-# # Dump a single db
-% mysqldump --user=admin_backup --password --lock-tables --databases db1 > /data/backup/db1.sql
-# # Dump ALL dbs
-% mysqldump --user=admin_backup --password --lock-tables --all-databases > /data/backup/dbs.sql
-
-# enable binary logs
 # # start server with the following
- % /opt/homebrew/opt/mariadb/bin/mysqld_safe --datadir=/opt/homebrew/var/mysql --port 3366 --log-bin
+ `% /opt/homebrew/opt/mariadb/bin/mysqld_safe --datadir=/opt/homebrew/var/mysql --port 3366 --log-bin`
 
-```
 ## ArangoDb \[graph]
+> currently (M1 machines) must be launched from application
+`% /Applications/ArangoDB3-CLI.app/Contents/Resources/arangosh'`
+# webconsole accessible at: http://127.0.0.1:8529/
+
+
 ## QuestDB \[time-series]
+> https://questdb.io/
+`% /opt/homebrew/opt/questdb/bin/questdb start -d /opt/homebrew/var/questdb -n -f`
+# webconsole accessible at: http://127.0.0.1:9000/
 
 ## Bus/Queue \[optional]
+
+---
+
+Demo concept for bus completion:
+- https://dbdiagram.io/d/630c565df1a9b01b0ffd2f7c
+  - Incorporate:
+    - https://www.arangodb.com/learn/search/tutorial/
+    - RelationalDB `SYSTEM VERSIONING` (and _view_) on **comments** table and show how it tracks edits

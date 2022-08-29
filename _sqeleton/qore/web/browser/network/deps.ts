@@ -13,7 +13,8 @@ export { ResponseTimeService } from 'https://deno.land/x/drash@v2.7.0/src/servic
 export { TengineService } from 'https://deno.land/x/drash@v2.7.0/src/services/tengine/tengine.ts'
 
 // database
-export { Client as MariaDb } from "https://deno.land/x/mysql@v2.10.2/mod.ts"
+export { Client as MariaDb } from 'https://deno.land/x/mysql@v2.10.2/mod.ts'
+export { aql, Database as ArangoDb, } from 'https://github.com/Tnifey/arango/raw/main/mod.ts'
 
 // utils
 import { createRequire } from "https://deno.land/std@0.150.0/node/module.ts";

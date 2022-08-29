@@ -27,6 +27,7 @@ SELECT SETVAL(`sqnc`, 13100, 0);
 -- Table structure for table `dq.system`
 --
 
+-- TODO: Apply the versioning (and associated view) to the comments table instead
 DROP TABLE IF EXISTS `dq.system`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;

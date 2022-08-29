@@ -1,7 +1,7 @@
 import { MariaDb } from "../../../network/deps.ts";
 
 let db:MariaDb
-export const Connect = (dbConn:MariaDb) => {db = dbConn}
+export const Connect = (dbConn:MariaDb) => {db = dbConn} // TODO: verify `Connect` is no longer needed
 
 const getMembers = async (col?:string, val?:string) => {
   return await db.query(

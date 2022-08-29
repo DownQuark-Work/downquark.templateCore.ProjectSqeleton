@@ -1,3 +1,6 @@
+// TODO: _**SO**_ much optimization work can be applied to the persistence workflow
+  // - begin with the `types/api` & `types/persistence` directories
+
 import RouteResourceDatabase from './routes/Database.ts'
 import RouteResourceLanding from './routes/Landing.ts'
 

@@ -1,0 +1,2 @@
+arangodump/*
+!arangodump/.gitkeep
