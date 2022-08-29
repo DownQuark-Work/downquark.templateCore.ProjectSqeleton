@@ -1,3 +1,25 @@
+Initial thoughts are below.
+I overscaled it, making it a bit complicated to navigate.
+
+Now that it's working We should be able to reign in the amount of files needed and make it more straight forward.
+
+Current workflow is:
+- the `web/browser/business` has two sub folders \[fe]
+  - `_api` for REST/SOAP/etc \[fe]
+  - `_views` for pages within the application where no ajax would be required \[fe]
+- the `web/browser/business` directory/layer opens the database connection only when needed by importing the specific database driver contained in: \[fe]
+  - `web/browser/network/resources/types/persistence` \[be]
+- `web/browser/business` configures the business logic and exports a DTO with all FE variables parsed \[fe]
+- `web/browser/network/resources/(types/api/* | routes/*)`
+  - imports the DTO
+  - parses and handles all routing
+  - applies FE variables to those from the BE
+  - executes the query \[be]
+- if `types/api` a json object with the query result is rendered as a response \[be]
+- if `routes/*` the query result is returned to be set as a variable and used however is required by the application  \[be]
+
+---
+
 > The business layer performs logic and passes down aggregates/etc
 > The above directories contain the actual sql/aql/etc language queries.
 > Which interact with the database and return the result to be passed up to the business layer
