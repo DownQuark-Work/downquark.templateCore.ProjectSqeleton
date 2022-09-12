@@ -5,6 +5,7 @@ import { GDBMS_View_Database } from '../../../business/graph/_views/database.ts'
 import { RDBMS_View_Database } from '../../../business/relational/_views/database.ts'
 import { TSDBMS_View_Database } from '../../../business/timeseries/_views/database.ts'
 
+ // TODO: move below to a higher level and remove dupes
 const csrf = new CSRFService(); // allows access to `csrf.token`
 
 export default class DatabaseResource extends Drash.Resource {
@@ -52,6 +53,30 @@ export default class DatabaseResource extends Drash.Resource {
         showFive: JSON.stringify(fiveRecords),
         }
       }
+
+    if(dbType === 'bus') 
+    {
+      const busConfig = [
+        [RDBMS_View_Database.getAllMembers,['3af6e4f0-24a4-11ed-9cf0-c29d42d3cfc8']],
+        [GDBMS_View_Database.getBatchedTraits,],
+        
+        // TSDBMS_View_Database
+      ]
+      // 3 queries from above would return 3 indexes:
+      /**
+       * loadBus( - 5 subscripion advances, 5 returned values (void || undefined will be returned as null)
+       *  [[RELATIONAL method1, [optional, props]]],
+       *  [[GRAPH method1],[GRAPH method2, [optional, props]]],
+       *  [[RELATIONAL method2], [GRAPHmethod1]],
+       * ) => [
+       *   {query: result, for: query[1]},
+       *   {query: result, for: query[2]},
+       *   null,
+       *   'no formatting is done in the pubsub'
+       *  ['handle, formats before hand when posssible.']
+       * ]
+       *  */ 
+    }
 
     const html = response.render("../application/views/screens/database.html", templateVariables) as string;
     return response.html(html);

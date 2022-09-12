@@ -1,2 +1,11 @@
 Should be in here because nothiing outside of this directory should utilize them (other than the styleguide documentation)
 naming this `_qomponents` will help cut down confusion when internally symlinked as `_components`
+
+- https://web.dev/patterns/components/
+- https://open-props.style/
+https://tr.designtokens.org/format/
+https://github.com/salesforce-ux/theo
+https://diez.org/
+
+https://web.dev/patterns/layout/
+https://web.dev/patterns/web-vitals-patterns/

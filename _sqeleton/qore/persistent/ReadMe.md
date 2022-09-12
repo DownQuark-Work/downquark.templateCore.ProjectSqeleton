@@ -1,9 +1,10 @@
 # Persistence
+> This directory will hold queries, dumps, etc.
 
 ## IndexedDB \[browser]
 > can run on any port that a FE is running on
 - `ViewTest.js` is a pseudo-business-layer
-
+ 
 ## MariaDB \[relational]
 > https://mariadb.com/kb/en/getting-started-with-the-nodejs-connector/
 > > **_https://deno.land/x/mysql@v2.10.2/mod.ts_**
@@ -22,6 +23,11 @@
 # webconsole accessible at: http://127.0.0.1:9000/
 
 ## Bus/Queue \[optional]
+> Using [Broadcast Channel](https://developer.chrome.com/blog/broadcastchannel/) for now.
+> Can make into a real bus if and when the need arises.
+
+### optional
+- https://clientdb.dev/
 
 ---
 

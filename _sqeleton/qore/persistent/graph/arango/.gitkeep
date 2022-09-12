@@ -6,13 +6,11 @@ starts on: http://127.0.0.1:8529/
 double click /Applications/ArangoDB3-CLI.app to start server (CLI coming w 3.10)
 start application shell with `% /Applications/ArangoDB3-CLI.app/Contents/Resources/arangosh'`
 
-Deno drivers
-- https://github.com/Tnifey/arango
-- https://github.com/envis10n/darango
-Javascript driver reference:
-- https://www.arangodb.com/docs/devel/drivers/js-getting-started.html#install 
+> https://www.arangodb.com/graph-database/ <-- scroll to the end-ish for great use cases and ex(planations|amples)
+> https://github.com/arangodb/interactive_tutorials
+> https://www.arangodb.com/learn/
+> https://www.arangodb.com/graph-analytics-at-enterprise-scale/
 
-https://github.com/arangodb/interactive_tutorials
 
 FOR COMMENTS EXAMPLE:
 - https://www.arangodb.com/learn/search/tutorial/
@@ -132,3 +130,10 @@ RETURN {
 }
 /*
 ```
+---
+
+Deno drivers
+- https://github.com/Tnifey/arango
+- https://github.com/envis10n/darango
+Javascript driver reference:
+- https://www.arangodb.com/docs/devel/drivers/js-getting-started.html#install 

@@ -62,10 +62,13 @@ SELECT ... INTO.
 It is unsafe to read a user-defined variable
 They must be used to PREPARE a prepared statement:
 
-@sql = 'DELETE FROM my_table WHERE c>1;';
-PREPARE stmt FROM @sql;
-EXECUTE stmt;
-DEALLOCATE PREPARE stmt;
+SELECT ROUND((COUNT(id)/4)) INTO @qtr FROM db.tbl WHERE col != 'User';
+SELECT @qtr;
+PREPARE stmnt FROM 'SELECT * FROM db.tbl WHERE col != \'User\' ORDER BY id DESC LIMIT ?';
+EXECUTE stmnt USING @qtr;
+DEALLOCATE PREPARE stmnt;
+
+
 ---
 Another common use is to include a counter in a query:
 
@@ -183,6 +186,8 @@ END //
 DELIMITER ;
 */
 
+-- function return value; cannot be called outside of query
+-- procedure returns nothing; must be called outside of query
 
 /* procedure
  CREATE PROCEDURE
