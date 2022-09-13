@@ -14,7 +14,7 @@
     "rules": {
       "tags": ["recommended"],
       "include": ["ban-untagged-todo"],
-      "exclude": []
+      "exclude": ["no-extra-boolean-cast"]
     }
   },
   "fmt": {
