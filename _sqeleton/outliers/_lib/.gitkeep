@@ -1,1 +1,15 @@
 All of these will be replaced by gitmodules contained within the knowledgebase
+
+These are not contained within the sqaffold but are [git submodules](https://git-scm.com/docs/gitsubmodules) that should link to dq knowledgebase repos
+
+The library will be ever ongoing so accepting the story for now because we have the Knowledge base folder primed and ready to e symlinked when time.
+
+
+- have the git submodules for all things outside of local dev.
+- but symlinking to the local folder may make actual development nicer? 🤷‍♂️ (we'll find out)
+  - `../../../../downquark.ventureCore.KnowledgeBase/_lib_modules/.gitkeep`
+
+While not imperative, these are a good place to start for some useful scripts.
+- downquark.templateCore.ProjectSqeleton/_sqeleton/qore/web/plugins/workers
+- https://github.com/mdn/dom-examples/tree/master/streams
+- https://github.com/mdn/dom-examples/tree/master/web-crypto
