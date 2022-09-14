@@ -4,6 +4,7 @@ These are not contained within the sqaffold but are [git submodules](https://git
 
 The library will be ever ongoing so accepting the story for now because we have the Knowledge base folder primed and ready to e symlinked when time.
 
+---
 
 - have the git submodules for all things outside of local dev.
 - but symlinking to the local folder may make actual development nicer? 🤷‍♂️ (we'll find out)
