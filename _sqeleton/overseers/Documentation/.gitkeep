@@ -5,6 +5,7 @@ DB - https://dbdocs.io/
   - `% npx dbdocs login`
   - `% npx dbdocs build relation-query.dbml --project=dq-demo`
 
+
   https://github.com/davidtheclark/cosmiconfig
   https://docs.rapidapi.com/
   
@@ -12,3 +13,6 @@ DB - https://dbdocs.io/
   - https://github.com/forem/selfhost#forem-self-host
   - https://developers.forem.com/
   - https://github.com/forem/selfhost
+
+https://github.com/lxgr-linux/pokete
+https://cataclysmdda.org/

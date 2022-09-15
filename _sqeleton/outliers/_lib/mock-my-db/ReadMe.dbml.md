@@ -12,6 +12,10 @@ Project "dq.arq.db.demo" {
   '''
 }
 
+// clod weather rference
+// https://github.com/mingrammer/flog
+// - https://github.com/brianvoe/gofakeit
+
 // https://www.dbml.org/docs/#project-definition
 // <: one-to-many. E.g: users.id < posts.user_id
 // >: many-to-one. E.g: posts.user_id > users.id
