@@ -20,7 +20,6 @@ switch(Deno.args[0]) {
     runCwd = '../network'
 }
 
-
 // create the file to attach the process to
 const file = await Deno.open('./process_output.txt', {
   read: true,

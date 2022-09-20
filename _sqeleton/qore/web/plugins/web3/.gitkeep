@@ -3,6 +3,5 @@ TODO: Symlink to (upcoming) `lib_modules` directory for access to:
 - web-crypto
 
 File naming will be along the lines of:
-- `/__spec/<layer>.<TestName>.ts`
-- `/_trigger/<scripts|tasks>/<layer>.<NAME>.ts`
+- `abi/(spec|trigger)/<layer>.<TestName>.ts`
 - `<whisper|swarm|ipfs>/<layer>.<NAME>.ts`

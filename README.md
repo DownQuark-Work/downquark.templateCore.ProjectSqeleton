@@ -10,6 +10,7 @@ This readme will be updated as development continues.
 Attempts will be made to keep this [miro board](https://miro.com/app/board/uXjVOqxaA3Y=/?share_link_id=146671647169) up to date.
 
 <details><summary>Current(ish) Directory Tree</summary>
+`% tree -I 'node_modules|.git*' | pbcopy`
 
 ```
 .
@@ -52,9 +53,13 @@ Attempts will be made to keep this [miro board](https://miro.com/app/board/uXjVO
 │   │   └── technical.md
 │   ├── outliers
 │   │   ├── _lib
+│   │   │   └── mock-my-db
+│   │   │       ├── ReadMe.dbml.md
+│   │   │       └── ReadMe.dbml.sql
 │   │   └── modules
 │   ├── overseers
 │   │   ├── CLI
+│   │   ├── Documentation
 │   │   ├── Logging
 │   │   ├── Metrics
 │   │   └── Spec
@@ -133,19 +138,39 @@ Attempts will be made to keep this [miro board](https://miro.com/app/board/uXjVO
 │       │   ├── executibles
 │       │   └── ios
 │       ├── persistent
-│       │   ├── bus
+│       │   ├── ReadMe.md
+│       │   ├── browser
+│       │   │   └── indexeddb
+│       │   │       ├── _controller.js
+│       │   │       ├── models
+│       │   │       │   ├── index.js
+│       │   │       │   ├── objectstore.js
+│       │   │       │   └── trxn.js
+│       │   │       ├── test.html
+│       │   │       └── views
+│       │   │           └── test.js
 │       │   ├── graph
-│       │   ├── inmemory
+│       │   │   └── arango
+│       │   │       └── arangodump
 │       │   ├── relational
+│       │   │   ├── ReadMe.md
+│       │   │   └── mariadb
+│       │   │       ├── dump-dq.relational-202208251435.sql
+│       │   │       ├── dump-dq.relational-202208280025-STRUCTURE.sql
+│       │   │       ├── example-logging-and-functions.sql
+│       │   │       ├── example-procedure.sql
+│       │   │       └── scratchwork.sql
 │       │   └── time
+│       │       └── ReadMe.md
 │       ├── protocol
-│       │   ├── mainnet
-│       │   ├── sidechain
-│       │   └── testnet
-│       ├── smartcontracts
-│       │   ├── mainnet
-│       │   ├── sidechain
-│       │   └── testnet
+│       │   ├── chains
+│       │   │   ├── main
+│       │   │   ├── side
+│       │   │   └── test
+│       │   └── contracts
+│       │       ├── main
+│       │       ├── side
+│       │       └── test
 │       └── web
 │           ├── browser
 │           │   ├── _core
@@ -166,28 +191,32 @@ Attempts will be made to keep this [miro board](https://miro.com/app/board/uXjVO
 │           │   │       │       ├── even.html
 │           │   │       │       └── odd.html
 │           │   │       └── screens
+│           │   │           ├── database.html
 │           │   │           └── landing.html
 │           │   ├── business
 │           │   │   ├── graph
-│           │   │   │   ├── _views
-│           │   │   │   │   └── landing.ts
-│           │   │   │   ├── query.ts
-│           │   │   │   └── read.ts
-│           │   │   ├── logic.ts
+│           │   │   │   ├── _api
+│           │   │   │   │   └── users.ts
+│           │   │   │   └── _views
+│           │   │   │       └── database.ts
 │           │   │   ├── relational
-│           │   │   │   ├── _views
-│           │   │   │   │   └── landing.ts
-│           │   │   │   ├── query.ts
-│           │   │   │   └── read.ts
+│           │   │   │   ├── _api
+│           │   │   │   │   └── users.ts
+│           │   │   │   └── _views
+│           │   │   │       └── database.ts
 │           │   │   └── timeseries
-│           │   │       ├── _views
-│           │   │       │   └── landing.ts
-│           │   │       ├── query.ts
-│           │   │       └── read.ts
+│           │   │       ├── _api
+│           │   │       │   └── metrics.ts
+│           │   │       └── _views
+│           │   │           └── database.ts
 │           │   ├── network
 │           │   │   ├── _assets
 │           │   │   │   ├── _logs
-│           │   │   │   │   └── 20228.17.log
+│           │   │   │   │   ├── 20228.17.log
+│           │   │   │   │   ├── 20228.26.log
+│           │   │   │   │   ├── 20228.27.log
+│           │   │   │   │   ├── 20228.28.log
+│           │   │   │   │   └── 20228.29.log
 │           │   │   │   ├── images
 │           │   │   │   └── js
 │           │   │   │       └── _v1
@@ -203,9 +232,18 @@ Attempts will be made to keep this [miro board](https://miro.com/app/board/uXjVO
 │           │   │   ├── resources
 │           │   │   │   ├── index.ts
 │           │   │   │   ├── routes
+│           │   │   │   │   ├── Database.ts
 │           │   │   │   │   └── Landing.ts
 │           │   │   │   └── types
+│           │   │   │       ├── api
+│           │   │   │       │   ├── index.ts
+│           │   │   │       │   ├── metrics.ts
+│           │   │   │       │   └── users.ts
 │           │   │   │       ├── error_handler.ts
+│           │   │   │       ├── persistence
+│           │   │   │       │   ├── graph.ts
+│           │   │   │       │   ├── relational.ts
+│           │   │   │       │   └── timeseries.ts
 │           │   │   │       ├── requests.ts
 │           │   │   │       ├── responses.ts
 │           │   │   │       ├── static_files_resource.ts
@@ -216,6 +254,23 @@ Attempts will be made to keep this [miro board](https://miro.com/app/board/uXjVO
 │           │   │   │   └── index.ts
 │           │   │   └── types.d.ts
 │           │   ├── persistence
+│           │   │   ├── _bus
+│           │   │   │   └── pubsub.ts
+│           │   │   ├── graph
+│           │   │   │   ├── index.ts
+│           │   │   │   ├── query
+│           │   │   │   └── read
+│           │   │   │       └── graph.ts
+│           │   │   ├── relational
+│           │   │   │   ├── index.ts
+│           │   │   │   ├── query
+│           │   │   │   └── read
+│           │   │   │       └── users.ts
+│           │   │   └── timeseries
+│           │   │       ├── index.ts
+│           │   │       ├── query
+│           │   │       └── read
+│           │   │           └── time.ts
 │           │   └── protocol
 │           ├── extensions
 │           │   └── pwa
@@ -254,15 +309,54 @@ Attempts will be made to keep this [miro board](https://miro.com/app/board/uXjVO
 │           │       └── tsconfig.json
 │           └── plugins
 │               ├── ipfs
-│               ├── serviceworkers
 │               ├── web3
-│               └── websockets
-│                   ├── app.ts
-│                   └── deps.ts
+│               │   ├── __spec
+│               │   ├── _trigger
+│               │   ├── _web3.min.js
+│               │   ├── swarm
+│               │   └── whisper
+│               ├── websockets
+│               │   ├── app.ts
+│               │   └── deps.ts
+│               └── workers
+│                   ├── dedicated
+│                   │   └── _example
+│                   │       ├── fibonacci
+│                   │       │   ├── fibonacci.js
+│                   │       │   └── index.html
+│                   │       └── simple
+│                   │           ├── index.html
+│                   │           ├── main.js
+│                   │           └── worker.js
+│                   ├── service
+│                   │   ├── _template
+│                   │   │   ├── serviceworker.js
+│                   │   │   ├── tempate.js
+│                   │   │   └── template.html
+│                   │   ├── _utils
+│                   │   │   └── conversions.js
+│                   │   ├── analytics-api.js
+│                   │   ├── cache
+│                   │   │   ├── cache-and-update.js
+│                   │   │   └── cache-then-network.js
+│                   │   ├── proxy-fetch.js
+│                   │   └── push
+│                   │       ├── clients.js
+│                   │       ├── rich.js
+│                   │       ├── simple.js
+│                   │       └── subscribe.js
+│                   └── shared
+│                       └── _example
+│                           ├── index.html
+│                           ├── index2.html
+│                           ├── multiply.js
+│                           ├── nosubmit.js
+│                           ├── square.js
+│                           └── worker.js
 ├── package.json
 └── yarn.lock
 
-116 directories, 132 files
+154 directories, 187 files
 ```
 
 </details>

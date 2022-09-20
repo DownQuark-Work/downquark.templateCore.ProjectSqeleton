@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ethers Web3 Plugin Validation</title>
+  <script src="../_external/detect-provider.min.js"></script>
+  <script type="module" src="api/metamask.js"></script>
+</head>
+<body>
+  <h2>Metamask</h2>
+  <button id="btn-connect-to-metamask" type="button" disabled>Connect To MetaMask</button>
+  | <button id="btn-request-permissions" type="button">Request Permissions</button>
+  <br/><span class="metamask-account"></span>
+  <br/><br/>
+  <details><summary>JSON RPC Methods</summary>
+    <a href="https://docs.metamask.io/guide/rpc-api.html#ethereum-json-rpc-methods" target="_blank">link</a>
+    <ul>
+      <li>eth_accounts</li>
+      <li>eth_call</li>
+      <li>eth_getBalance</li>
+      <li>eth_sendTransaction</li>
+      <li>eth_sign</li>
+    </ul>
+  </details>
+
+  <details><summary>Signing Methods</summary>
+    <a href="https://docs.metamask.io/guide/signing-data.html#a-brief-history" target="_blank">link</a>
+    <ul>
+      <li>eth_sign</li>
+      <li>personal_sign</li>
+      <li>signTypedData (currently identical to signTypedData_v1)</li>
+      <li>signTypedData_v1</li>
+      <li>signTypedData_v3</li>
+      <li>signTypedData_v4</li>
+    </ul>
+  </details>
+
+  <a href="https://docs.metamask.io/guide/registering-your-token.html" target="_blank">Register Your Token</a>
+  <br/><a href="https://docs.metamask.io/guide/defining-your-icon.html" target="_blank">Defining App Icon</a>
+  <br/><a href="https://docs.metamask.io/guide/snaps.html#features" target="_blank">Snaps</a>
+  <br/><a href="https://docs.metamask.io/guide/create-dapp.html" target="_blank">Dapp Tutorial</a>
+  <br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/BboyAkers/simple-dapp-tutorial" target="_blank">dapp files</a>
+  <br/>
+  <br/><a href="https://faucet.metamask.io/" target="_blank" style="font-size: larger">Metamask Ropsten Faucet</a>
+
+  <h2>Ethers</h2>
+  <a href="https://docs.ethers.io/v5/api/" target="_blank">API</a>
+  <br/><a href="https://docs.ethers.io/v5/api/signer/#Wallet--methods" target="_blank">Wallet Examples</a>
+  <br/><a href="https://docs.ethers.io/v5/api/contract/contract/#Contract" target="_blank">Contract-Create</a>
+  <br/><a href="https://docs.ethers.io/v5/api/contract/contract-factory/" target="_blank">Contract-Deploy</a>
+  <br/><a href="https://docs.ethers.io/v5/api/contract/example/" target="_blank">Contract-Example</a>
+  <br/><a href="https://docs.ethers.io/v5/api/utils/" target="_blank" style="font-size:large">Utils</a>
+  <br/><a href="https://docs.ethers.io/v5/api/other/hardware/" target="_blank">Ledger Wallet</a>
+  <br/><a href="https://docs.ethers.io/v5/cli/" target="_blank">CLI</a>
+  
+  <h2>Ethereum</h2>
+  <a href="https://ethereum.org/en/developers/docs/bridges/" target="_blank">Bridges</a>
+  <br/><a href="https://ethereum.org/en/developers/docs/standards/#token-standards" target="_blank">Token-Standards</a>
+  <br/><a href="https://ethereum.org/en/developers/docs/networking-layer/#sub-protocols" target="_blank">Sub-Protocols</a>
+  <br/><a href="https://ethereum.org/en/developers/docs/data-structures-and-encoding/" target="_blank">Data Structures</a>
+  <br/><a href="https://ethereum.org/en/developers/tutorials/" target="_blank" style="font-size: larger;">Tutorials</a>
+  
+  <br/><br/>
+  <code style="display:none">
+    % cd &lt;PARENT_DIRECTORY&gt; &amp;&amp; &lt;Launch_file_server&gt;<br/>
+    http://0.0.0.0:1313/web3/ethers-plugin-validation.html
+    SCRATCH:
+    deployCollectiblesButton.onclick = async () => {
+      collectiblesStatus.innerHTML = 'Deploying';
+
+      try {
+        collectiblesContract = await collectiblesFactory.deploy();
+        await collectiblesContract.deployTransaction.wait();
+      } catch (error) {
+        collectiblesStatus.innerHTML = 'Deployment Failed';
+        throw error;
+      }
+
+      if (collectiblesContract.address === undefined) {
+        return;
+      }
+
+      console.log(
+        `Contract mined! address: ${collectiblesContract.address} transactionHash: ${collectiblesContract.deployTransaction.hash}`,
+      );
+      collectiblesStatus.innerHTML = 'Deployed';
+      mintButton.disabled = false;
+      mintAmountInput.disabled = false;
+    };
+
+mintButton.onclick = async () => {
+      collectiblesStatus.innerHTML = 'Mint initiated';
+      let result = await collectible
+
+      collectiblessContract.mintCollectibles(
+        mintAmountInput.value,
+        {
+          from: accounts[0],
+        },
+      );
+      result = await result.wait();
+      console.log(result);
+      collectiblesStatus.innerHTML = 'Mint completed';
+ 
+
+collectiblesFactory = new ethers__WEBPACK_IMPORTED_MODULE_2__[/* ethers */ \"a\"].ContractFactory(
+  </code>
+</body>
+</html>

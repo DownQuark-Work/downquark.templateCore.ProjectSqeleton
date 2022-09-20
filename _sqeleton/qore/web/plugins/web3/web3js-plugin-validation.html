@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify plugins are working</title>
+  <script src="../_external/_web3.min.js"></script>
+</head>
+<body>
+  <h1>Plugin Verification</h1>
+  <h2>Web3.js</h2>
+  <p>Open developer tools console to view output of the following:</p>
+  <details style="background-color:lightgrey;"><summary>`web3` script</summary>
+    <code style="white-space: pre;">
+      const web3 = new Web3(Web3.givenProvider || "ws://localhost:8546");
+      console.log('web3: ', web3)
+      
+      web3.extend({
+          property: 'ModuleDownquark',
+          methods: [{
+              name: 'getBalance',
+              call: 'eth_getBalance',
+              params: 2,
+              inputFormatter: [web3.extend.formatters.inputAddressFormatter, web3.extend.formatters.inputDefaultBlockNumberFormatter],
+              outputFormatter: web3.utils.hexToNumberString
+          },{
+              name: 'getGasPriceSuperFunction',
+              call: 'eth_gasPriceSuper',
+              params: 2,
+              inputFormatter: [null, web3.utils.numberToHex]
+          }]
+      });
+
+      web3.extend({
+          methods: [{
+              name: 'directCall',
+              call: 'eth_callForFun',
+          }]
+      });
+
+      console.log('ModuleDownquark is available: ',web3);
+      console.log('web3.eth.accounts.wallet: ', web3.eth.accounts.wallet)
+      
+      // From a JSON interface object
+  const abiJSON = web3.eth.abi.encodeFunctionSignature({
+      name: 'myMethod',
+      type: 'function',
+      inputs: [{
+          type: 'uint256',
+          name: 'myNumber'
+      },{
+          type: 'string',
+          name: 'myString'
+      }]
+  })
+  const abiString = web3.eth.abi.encodeFunctionSignature('myMethod(uint256,string)')
+  console.log('abiJSON, abiString:\n', abiJSON, abiString, abiJSON === abiString)
+  console.log(
+    web3.eth.abi.encodeParameter('uint256', '2345675643'),'\n',
+    web3.eth.abi.encodeParameter('bytes32', '0xdf3234'),'\n',
+    web3.eth.abi.encodeParameters(['uint256','string'], ['2345675643', 'Hello!%'])
+  )
+
+  const encodedFnc = web3.eth.abi.encodeFunctionCall({
+      name: 'myMethod',
+      type: 'function',
+      inputs: [{
+          type: 'uint256',
+          name: 'myNumber'
+      },{
+          type: 'string',
+          name: 'myString'
+      }]
+  }, ['2345675643', 'Hello!%']);
+  console.log('encodedFnc: ', encodedFnc)
+
+  console.log('> ', 
+    web3.eth.abi.decodeParameter('string', '0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000848656c6c6f212521000000000000000000000000000000000000000000000000'),'\n',
+    web3.eth.abi.decodeParameter('uint256', '0x0000000000000000000000000000000000000000000000000000000000000010'),'\n',
+    web3.eth.abi.decodeParameter(
+      {
+          "ParentStruct": {
+            "propertyOne": 'uint256',
+            "propertyTwo": 'uint256',
+            "childStruct": {
+              "propertyOne": 'uint256',
+              "propertyTwo": 'uint256'
+            }
+          }
+      },
+      '0x000000000000000000000000000000000000000000000000000000000000002a0000000000000000000000000000000000000000000000000000000000000038000000000000000000000000000000000000000000000000000000000000002d000000000000000000000000000000000000000000000000000000000000004e'
+    )
+  )
+  console.log('>> ',
+  web3.eth.abi.decodeParameters(['string', 'uint256'], '0x000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000ea000000000000000000000000000000000000000000000000000000000000000848656c6c6f212521000000000000000000000000000000000000000000000000'),'\n',
+  web3.eth.abi.decodeParameters([{
+      type: 'string',
+      name: 'myString'
+  },{
+      type: 'uint256',
+      name: 'myNumber'
+  }], '0x000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000ea000000000000000000000000000000000000000000000000000000000000000848656c6c6f212521000000000000000000000000000000000000000000000000'),'\n',
+  web3.eth.abi.decodeParameters([
+    'uint8[]',
+    {
+      "ParentStruct": {
+        "propertyOne": 'uint256',
+        "propertyTwo": 'uint256',
+        "childStruct": {
+          "propertyOne": 'uint256',
+          "propertyTwo": 'uint256'
+        }
+      }
+    }
+  ], '0x00000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000002a0000000000000000000000000000000000000000000000000000000000000038000000000000000000000000000000000000000000000000000000000000002d000000000000000000000000000000000000000000000000000000000000004e0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000002a0000000000000000000000000000000000000000000000000000000000000018')
+  )
+
+  console.log('log: ', web3.eth.abi.decodeLog([{
+      type: 'string',
+      name: 'myString'
+  },{
+      type: 'uint256',
+      name: 'myNumber',
+      indexed: true
+  },{
+      type: 'uint8',
+      name: 'mySmallNumber',
+      indexed: true
+  }],
+  '0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000748656c6c6f252100000000000000000000000000000000000000000000000000',
+  ['0x000000000000000000000000000000000000000000000000000000000000f310', '0x0000000000000000000000000000000000000000000000000000000000000010'])
+  )
+  console.log('NET:');
+  web3.eth.net.getId().then(console.log);
+  /* Also available (if initted)
+    web3.bzz.net.getId().then(console.log);
+    web3.shh.net.getId().then(console.log);
+  */
+  web3.eth.net.isListening().then(console.log);
+  web3.eth.net.getPeerCount().then(console.log);
+    </code>
+  </details>
+  <button type="button" onclick="initMetaMaskExtension()">Connect MetaMask</button>
+  <details style="background-color:coral; display:inline-block; margin:1rem; padding:1rem; display:none"><summary>Swarm (DEPRECATED)</summary>
+    <quote style="display: block; background-color: bisque; margin:.5rem; padding: .5rem">
+      Requires file-server running on port :4242<br/><br/>
+      When called on the umbrella package web3 it will also set the provider for all sub modules web3.eth, web3.shh, etc EXCEPT web3.bzz which needs a separate provider at all times.
+    </quote>
+    <button type="button" id="swarm-upload" onclick="swarmupload()">Upload</button> | 
+    <button type="button" id="swarm-download" onclick="swarmdownload()">Download</button> | 
+    <button type="button" id="swarm-pick" onclick="swarmpick()">Pick</button>
+  </details>
+  <details style="background-color:coral; display:inline-block; margin:1rem; padding:1rem; display:none"><summary>Whisper (DEPRECATED)</summary>
+    <button type="button" id="whisper-post" onclick="whipserpost()">Post</button> |
+  </details>
+  <code style="display:none">
+    % cd &lt;PARENT_DIRECTORY&gt; &amp;&amp; &lt;Launch_file_server&gt;<br/>
+    http://0.0.0.0:1313/web3/plugin-validation.html
+  </code>
+  <script>
+    // web3.js examples
+    const web3 = new Web3(Web3.givenProvider || "ws://localhost:8546");
+    console.log('web3: ', web3)
+    
+    web3.extend({
+        property: 'ModuleDownquark',
+        methods: [{
+            name: 'getBalance',
+            call: 'eth_getBalance',
+            params: 2,
+            inputFormatter: [web3.extend.formatters.inputAddressFormatter, web3.extend.formatters.inputDefaultBlockNumberFormatter],
+            outputFormatter: web3.utils.hexToNumberString
+        },{
+            name: 'getGasPriceSuperFunction',
+            call: 'eth_gasPriceSuper',
+            params: 2,
+            inputFormatter: [null, web3.utils.numberToHex]
+        }]
+    });
+
+    web3.extend({
+        methods: [{
+            name: 'directCall',
+            call: 'eth_callForFun',
+        }]
+    });
+
+    console.log('ModuleDownquark is available: ',web3);
+    console.log('web3.eth.accounts.wallet: ', web3.eth.accounts.wallet)
+    
+    // From a JSON interface object
+const abiJSON = web3.eth.abi.encodeFunctionSignature({
+    name: 'myMethod',
+    type: 'function',
+    inputs: [{
+        type: 'uint256',
+        name: 'myNumber'
+    },{
+        type: 'string',
+        name: 'myString'
+    }]
+})
+const abiString = web3.eth.abi.encodeFunctionSignature('myMethod(uint256,string)')
+console.log('abiJSON, abiString:\n', abiJSON, abiString, abiJSON === abiString)
+console.log(
+  web3.eth.abi.encodeParameter('uint256', '2345675643'),'\n',
+  web3.eth.abi.encodeParameter('bytes32', '0xdf3234'),'\n',
+  web3.eth.abi.encodeParameters(['uint256','string'], ['2345675643', 'Hello!%'])
+)
+
+const encodedFnc = web3.eth.abi.encodeFunctionCall({
+    name: 'myMethod',
+    type: 'function',
+    inputs: [{
+        type: 'uint256',
+        name: 'myNumber'
+    },{
+        type: 'string',
+        name: 'myString'
+    }]
+}, ['2345675643', 'Hello!%']);
+console.log('encodedFnc: ', encodedFnc)
+
+console.log('> ', 
+  web3.eth.abi.decodeParameter('string', '0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000848656c6c6f212521000000000000000000000000000000000000000000000000'),'\n',
+  web3.eth.abi.decodeParameter('uint256', '0x0000000000000000000000000000000000000000000000000000000000000010'),'\n',
+  web3.eth.abi.decodeParameter(
+    {
+        "ParentStruct": {
+          "propertyOne": 'uint256',
+          "propertyTwo": 'uint256',
+          "childStruct": {
+            "propertyOne": 'uint256',
+            "propertyTwo": 'uint256'
+          }
+        }
+    },
+    '0x000000000000000000000000000000000000000000000000000000000000002a0000000000000000000000000000000000000000000000000000000000000038000000000000000000000000000000000000000000000000000000000000002d000000000000000000000000000000000000000000000000000000000000004e'
+  )
+)
+console.log('>> ',
+web3.eth.abi.decodeParameters(['string', 'uint256'], '0x000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000ea000000000000000000000000000000000000000000000000000000000000000848656c6c6f212521000000000000000000000000000000000000000000000000'),'\n',
+web3.eth.abi.decodeParameters([{
+    type: 'string',
+    name: 'myString'
+},{
+    type: 'uint256',
+    name: 'myNumber'
+}], '0x000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000ea000000000000000000000000000000000000000000000000000000000000000848656c6c6f212521000000000000000000000000000000000000000000000000'),'\n',
+web3.eth.abi.decodeParameters([
+  'uint8[]',
+  {
+    "ParentStruct": {
+      "propertyOne": 'uint256',
+      "propertyTwo": 'uint256',
+      "childStruct": {
+        "propertyOne": 'uint256',
+        "propertyTwo": 'uint256'
+      }
+    }
+  }
+], '0x00000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000002a0000000000000000000000000000000000000000000000000000000000000038000000000000000000000000000000000000000000000000000000000000002d000000000000000000000000000000000000000000000000000000000000004e0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000002a0000000000000000000000000000000000000000000000000000000000000018')
+)
+
+console.log('log: ', web3.eth.abi.decodeLog([{
+    type: 'string',
+    name: 'myString'
+},{
+    type: 'uint256',
+    name: 'myNumber',
+    indexed: true
+},{
+    type: 'uint8',
+    name: 'mySmallNumber',
+    indexed: true
+}],
+'0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000748656c6c6f252100000000000000000000000000000000000000000000000000',
+['0x000000000000000000000000000000000000000000000000000000000000f310', '0x0000000000000000000000000000000000000000000000000000000000000010'])
+)
+console.log('NET:');
+web3.eth.net.getId().then(console.log);
+/* Also available (if initted)
+  web3.bzz.net.getId().then(console.log);
+  web3.shh.net.getId().then(console.log);
+*/
+web3.eth.net.isListening().then(console.log);
+web3.eth.net.getPeerCount().then(console.log);
+  </script>
+  <script>
+    const Bzz = web3.bzz
+    console.log('web3.bzz.setProvider: ', Bzz.setProvider("ws://swarmexample")) // Bzz.setProvider("wss://swarmexample"))
+    console.log('bzz.currentProvider;: ', web3.currentProvider)
+    const swarmupload = () => {
+      // raw data
+      Bzz.upload("test file").then(function(hash) { console.log("Uploaded file. Address:", hash); })
+      // raw directory
+      var dir = {
+          "/foo.txt": {type: "text/plain", data: "sample file"},
+          "/bar.txt": {type: "text/plain", data: "another file"}
+      };
+      Bzz.upload(dir).then(function(hash) {
+          console.log("Uploaded directory. Address:", hash);
+      });
+      // upload from disk in the browser (see swarmpick button)
+      // Bzz.upload({pick: "file"}) // could also be "directory" or "data"
+      //   .then(console.log);
+    }
+    const swarmdownload = () => {
+      // download raw file
+      var fileHash = "a5c10851ef054c268a2438f10a21f6efe3dc3dcdcc2ea0e6a1a7a38bf8c91e23";
+      Bzz.download(fileHash).then(function(buffer) {
+      console.log("Downloaded file:", buffer.toString());
+      // download directory, if the hash is manifest file.
+      var dirHash = "7e980476df218c05ecfcb0a2ca73597193a34c5a9d6da84d54e295ecd8e0c641";
+      Bzz.download(dirHash).then(function(dir) {
+          console.log("Downloaded directory:");
+          // > {
+          //     'bar.txt': { type: 'text/plain', data: <Buffer 61 6e 6f 74 68 65 72 20 66 69 6c 65> },
+          //     'foo.txt': { type: 'text/plain', data: <Buffer 73 61 6d 70 6c 65 20 66 69 6c 65> }
+          // }
+      });
+});
+    }
+    const swarmpick = () => {
+      Bzz.pick.file().then(console.log);
+      Bzz.pick.directory().then(console.log);
+      Bzz.pick.data().then(console.log);
+    }
+  </script>
+  <script>
+    const whipserpost = () => {
+      var identities = [];
+      var subscription = null;
+
+      Promise.all([
+          web3.shh.newSymKey().then((id) => {identities.push(id);}),
+          web3.shh.newKeyPair().then((id) => {identities.push(id);})
+
+      ]).then(() => {
+
+          // will receive also its own message send, below
+          subscription = shh.subscribe("messages", {
+              symKeyID: identities[0],
+              topics: ['0xffaadd11']
+          }).on('data', console.log);
+
+      }).then(() => {
+        web3.shh.post({
+          symKeyID: identities[0], // encrypts using the sym key ID
+          sig: identities[1], // signs the message using the keyPair ID
+          ttl: 10,
+          topic: '0xffaadd11',
+          payload: '0xffffffdddddd1122',
+          powTime: 3,
+          powTarget: 0.5
+        }).then(h => console.log(`Message with hash ${h} was successfuly sent`))
+        .catch(err => console.log("Error: ", err));
+      });
+    }
+  </script>
+</body>
+</html>
