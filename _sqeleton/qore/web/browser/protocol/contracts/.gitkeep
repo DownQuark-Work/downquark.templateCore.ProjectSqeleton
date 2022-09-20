@@ -1,0 +1,2 @@
+the solidity files will reside here
+Hardhat will pull the .sol files from here and render the results into `web3/abi/` 
