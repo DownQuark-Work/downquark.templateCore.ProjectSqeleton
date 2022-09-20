@@ -2,3 +2,4 @@ This should be for modules that can be launched via `npx` or `yarn dlx`
 Below may be good candidates for lib as well
 https://github.com/g-plane/tiny-package-manager
 https://github.com/keyz/the-super-tiny-interpreter
+https://maryrosecook.com/blog/post/little-lisp-interpreter
