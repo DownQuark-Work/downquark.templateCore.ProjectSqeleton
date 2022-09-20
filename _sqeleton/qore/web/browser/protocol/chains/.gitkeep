@@ -1,3 +1,6 @@
 `ln -s <PATH_TO_MAINNET> ./main`
 `ln -s <PATH_TO_SIDENET> ./side`
 `ln -s <PATH_TO_TESTNET> ./test`
+
+https://lhartikk.github.io/
+https://naivecoinstake.learn.uno/
