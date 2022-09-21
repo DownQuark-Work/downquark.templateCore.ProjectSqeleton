@@ -1,1 +1,24 @@
+$ npx hardhat node
+$npx hardhat run scripts/deploy.ts --network localhost
+
+Choosing between tasks and scripts is up to you. If you are in doubt which one you should use, you may find this useful:
+
+If you want to automate a workflow that requires no parameters, a script is probably the best choice.
+
+If the workflow you are automating requires some parameters, consider creating a Hardhat task.
+
+If you need to access the Hardhat Runtime Environment from another tool which has its own CLI, like 
+jest or  ndb, you should write a script. Make sure to import the Hardhat runtime environment explicitly, so it can be run with that tool instead of Hardhat's CLI.
+
+If you feel Hardhat's parameter handling is falling short of your needs, you should write a script. Just import the Hardhat runtime environment explicitly, use your own argument parsing logic (e.g. using yargs), and run it as a standalone Node.js script.
+
 Hardhat related
+https://hardhat.org/hardhat-runner/docs/advanced/scripts
+https://hardhat.org/hardhat-runner/docs/advanced/create-task
+https://hardhat.org/hardhat-runner/docs/advanced/building-plugins
+  - https://github.com/NomicFoundation/hardhat-ts-plugin-boilerplate
+
+  https://hardhat.org/hardhat-network-helpers/docs/reference
+  https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-toolbox
+
+

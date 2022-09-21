@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "rootDirs": ["./web3/abi/TO_BE_SYMLINKED/contracts", "./web3/abi/trigger/scripts", "./web3/abi/TO_BE_SYMLINKED/spec"],
+    "strict": true,
+    "skipLibCheck": true,
+  },
+  "include": ["./web3/abi/TO_BE_SYMLINKED/spec", "./web3/abi/TO_BE_SYMLINKED/contracts", "./web3/abi/trigger/scripts"],
+  "files": ["./hardhat.config.ts"]
+}

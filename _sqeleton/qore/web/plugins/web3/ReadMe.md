@@ -1,3 +1,20 @@
+# Hardhat quick deploy
+- `% y hat compile`
+- `% y hat test` // test will also compile the contract
+- `% y hat node` // New terminal window
+
+## Scripts
+- `% y hat run web3/abi/trigger/scripts/deploy.ts --network localhost` // deploy
+- `% y hat console` // open interactive prompt
+> PROOF: `> config` _OR_ `> ethers`
+> `> console.log(await ethers.getSigners())` // top level await
+
+## Tasks
+- `% y hat help balance`
+- `% y hat node` OR `% y hat console`
+- `% y hat balance --account 0x5b2F22803Eed7b6026AEF045e1556D6b6993F953`
+- `% y hat balance --account 0x67c3b12548b785378545D076f633593f14612C03`
+
 # libraries
 ## ethers
 > recommended

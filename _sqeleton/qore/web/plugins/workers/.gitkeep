@@ -13,6 +13,9 @@ ou can't directly manipulate the DOM from inside a worker, or use some default m
 https://serviceworke.rs/ << FOUND IT
 https://www.freecodecamp.org/news/how-webworkers-work-in-javascript-with-example/
 
+vv-- FROM previous build --vv
+https://github.com/DownQuark-Work/downquark.blockchainWeb3.PWA_Arqade/blob/main/_src/web3/PWA/_Arqade/sw.js
+
 There is only one service worker per PWA, but that doesn't mean you need to place the code only in one file. A service worker can include other files using importScripts in every browser or using ECMAScript module imports in some modern browsers.
 > https://web.dev/learn/pwa/service-workers/
 > https://web.dev/service-worker-lifecycle/#updates

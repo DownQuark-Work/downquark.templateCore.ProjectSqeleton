@@ -5,7 +5,8 @@
   "workspaces": [
     "_sqeleton/*",
     "_sqeleton/qore/*",
-    "_sqeleton/qore/web/extensions/*"
+    "_sqeleton/qore/web/extensions/*",
+    "_sqeleton/qore/web/plugins/"
   ],
   "dependencies": {
     "lit": "^2.2.8"
