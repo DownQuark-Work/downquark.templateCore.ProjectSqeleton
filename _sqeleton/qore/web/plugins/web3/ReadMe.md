@@ -1,3 +1,5 @@
+https://www.blockscope.tech/auth/sign-up
+
 # Hardhat quick deploy
 - `% y hat compile`
 - `% y hat test` // test will also compile the contract

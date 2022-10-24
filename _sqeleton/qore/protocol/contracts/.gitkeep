@@ -1,3 +1,12 @@
+the solidity files will reside here
+Hardhat will pull the .sol files from here and render the results into `web3/abi/` 
+
+https://eips.ethereum.org/erc
+https://ethereum.org/en/eips/
+
+
+https://www.quicknode.com/guides <<< may be a good starting point
+
 💭 consider updating naming structure to be:
 `<main|side|test><CONTRACT_NAME>.sol`
 

@@ -1,0 +1,40 @@
+ipns://js.ipfs.tech/ <<--
+-- https://docs.ipfs.tech/basics/js/js-ipfs/#install-js-ipfs
+
+https://ipfs.tech/#install
+https://docs.ipfs.tech/
+
+https://medium.com/a-weekend-with/a-weekend-with-ipfs-9f2647fc231 <<
+https://docs.ipfs.tech/how-to/publish-ipns/#publishing-ipns-names-with-kubo
+
+ipns://explore.ipld.io/
+ipns://ipld.io/
+- ipns://ipld.io/docs/
+
+https://proto.school/course/ipfs
+https://proto.school/tutorials
+
+https://docs.ipfs.tech/how-to/mint-nfts-with-ipfs/#a-short-introduction-to-nfts
+- https://docs.ipfs.tech/how-to/best-practices-for-nft-data/
+
+ipns://awesome.ipfs.io/
+https://discuss.ipfs.tech/
+
+https://docs.ipfs.tech/how-to/best-practices-for-ipfs-builders/#use-cidv1-for-future-proof-addressing-and-case-insenstive-contexts
+https://docs.ipfs.tech/how-to/address-ipfs-on-web/
+
+https://docs.ipfs.tech/how-to/create-simple-chat-app/
+
+https://tableland.xyz/
+https://nft.storage/docs/
+[fleek](ipfs://bafybeiarrje6j344nfquzi6fxc4eqs3lmjdohgqq4tekukze4shs3rswhe/)
+[fleek docs](ipfs://bafybeiezsw4ri4t54xktqoyirtiytgvz52o6cw6trvmfiz6vn5god7cv4y/)
+
+https://about.like.co/
+- https://docs.like.co/
+
+Projects using Multiformats
+The Multiformats project began through the IPFS Project. It is used extensively in projects like
+- IPFS - a peer-to-peer hypermedia protocol and distributed file system.
+- libp2p - a modular network library for peer-to-peer protocols.
+- IPLD - a set of standards and implementations for creating decentralized data-structures that are universally addressable and linkable.

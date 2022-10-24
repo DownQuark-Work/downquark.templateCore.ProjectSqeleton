@@ -1,6 +1,6 @@
 {
   "name": "DownQuark Chrome Extension",
-  "description": "Blurb Pertaining to DownQuark Chrome Extension",
+  "description": "Blurb Pertaining to DownQuark Chrome Extension - Great resource: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json",
   "version": "0.0.1",
   "manifest_version": 3,
   "permissions": [],

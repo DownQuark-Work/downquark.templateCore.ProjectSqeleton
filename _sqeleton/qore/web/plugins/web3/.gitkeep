@@ -5,3 +5,6 @@ TODO: Symlink to (upcoming) `lib_modules` directory for access to:
 File naming will be along the lines of:
 - `abi/(spec|trigger)/<layer>.<TestName>.ts`
 - `<whisper|swarm|ipfs>/<layer>.<NAME>.ts`
+
+Worth a readthrough:
+https://threadreaderapp.com/thread/1579550419944058880.html?s=12&t=mbA1T0B-y2rQelFuMzZSFg
