@@ -1,6 +1,10 @@
 Should be in here because nothiing outside of this directory should utilize them (other than the styleguide documentation)
 naming this `_qomponents` will help cut down confusion when internally symlinked as `_components`
 
+## Design Tokens \[theo\] below:
+https://github.com/salesforce-ux/theo#spec
+- https://github.com/salesforce-ux/theo/blob/master/CLI.md
+
 - https://web.dev/patterns/components/
 - https://open-props.style/
 https://tr.designtokens.org/format/

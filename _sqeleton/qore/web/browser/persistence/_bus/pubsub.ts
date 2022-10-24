@@ -1,3 +1,5 @@
+// CHECK >> https://levelup.gitconnected.com/simple-pub-sub-pattern-using-windows-custom-event-219b2883069
+
 // TODO: Implement workers (rest of this link: https://developer.chrome.com/blog/broadcastchannel/)
 //  // when the time comes
 
