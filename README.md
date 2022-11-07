@@ -360,3 +360,5 @@ Attempts will be made to keep this [miro board](https://miro.com/app/board/uXjVO
 ```
 
 </details>
+
+`% gh api orgs/downquark-work/repos | grep -o 'git@[^"]*'`

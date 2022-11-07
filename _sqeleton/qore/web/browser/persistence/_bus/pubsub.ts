@@ -1,3 +1,8 @@
+// CHECK >> https://levelup.gitconnected.com/simple-pub-sub-pattern-using-windows-custom-event-219b2883069
+// https://www.patterns.dev/posts/observer-pattern/
+
+// https://www.patterns.dev/posts/classic-design-patterns/
+
 // TODO: Implement workers (rest of this link: https://developer.chrome.com/blog/broadcastchannel/)
 //  // when the time comes
 
