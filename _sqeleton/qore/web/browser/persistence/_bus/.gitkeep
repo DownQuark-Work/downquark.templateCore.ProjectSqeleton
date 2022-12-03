@@ -1,0 +1,9 @@
+https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API
+- https://deno.com/deploy/docs/runtime-broadcast-channel
+
+---
+
+https://www.rabbitmq.com/getstarted.html
+- https://github.com/rabbitmq/rabbitmq-tutorials
+
+- https://deno.land/x/amqp@v0.17.0/mod.ts

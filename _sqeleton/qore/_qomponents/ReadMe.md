@@ -1,0 +1,2 @@
+# qore qomponents
+`$ yarn dev`

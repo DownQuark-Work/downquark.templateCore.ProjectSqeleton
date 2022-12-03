@@ -1,0 +1,9 @@
+This should be a git module to the `bloq` repo when it is ready
+- or maybe just using yarn:
+https://yarnpkg.com/features/protocols
+- github:foo/bar
+- portal:./my-folder
+- workspace:*
+
+---
+[interesting](https://yarnpkg.com/features/protocols#exec) <- may actually work kinda well for this

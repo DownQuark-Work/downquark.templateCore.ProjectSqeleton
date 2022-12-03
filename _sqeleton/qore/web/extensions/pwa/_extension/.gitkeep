@@ -1,0 +1,11 @@
+[DEVELOPMENT BUILD]
+- Upload all unpacked files to chrome
+---
+
+- all **PWA** specific files will reside here
+  - extension mainfest
+  - background/content
+  - scripts / etc
+- _src_ files will be transpiled to the _\TRANSPILED_ directory
+  - this directory will reference transpiled files within the _\TRANSPILED_ directory
+- this entire directory along with the _\TRANSPILED_ directory will be compiled to the _\_dist_ directory

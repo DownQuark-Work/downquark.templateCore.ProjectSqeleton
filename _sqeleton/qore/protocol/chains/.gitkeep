@@ -1,0 +1,8 @@
+`ln -s <PATH_TO_MAINNET> ./main`
+`ln -s <PATH_TO_SIDENET> ./side`
+`ln -s <PATH_TO_TESTNET> ./test`
+
+https://lhartikk.github.io/jekyll/update/2017/07/14/chapter1.html
+https://naivecoinstake.learn.uno/
+https://github.com/sandoche/NaivecoinStake-Proof-of-Stake-Website
+- https://github.com/lhartikk/naivecoin-ui

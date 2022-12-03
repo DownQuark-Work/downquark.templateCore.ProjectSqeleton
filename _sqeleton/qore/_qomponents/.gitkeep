@@ -1,0 +1,63 @@
+Should be in here because nothiing outside of this directory should utilize them (other than the styleguide documentation)
+naming this `_qomponents` will help cut down confusion when internally symlinked as `_components`
+
+https://design.gs.com/foundation/color-system/all-hues-and-values <<<<--YES
+
+#e8e2d1 <-- nice color
+https://nostalgic-css.github.io/NES.css/
+https://www.730dc.com/about/home
+
+https://utopia.fyi/ <<-- fluid responsive design
+https://picocss.com/<<---
+https://boltcss.com/ <<-- same vein
+
+## Design Tokens \[theo\] below:
+https://github.com/salesforce-ux/theo#spec
+- https://github.com/salesforce-ux/theo/blob/master/CLI.md
+
+## JSON Token Generator \[GUI]
+- https://tokens.layoutit.com/
+  - use with:
+- https://spec.fm/specifics/8-pt-grid
+- https://tanzu.vmware.com/content/built-to-adapt/intro-to-the-8-point-grid-system-2
+- https://www.designsystems.com/space-grids-and-layouts/
+
+https://github.com/GoogleChrome/web.dev/blob/main/src/site/_data/design/tokens.json
+- https://github.com/amzn/style-dictionary/tree/main/examples/complete
+- https://github.com/amzn/style-dictionary/tree/main/examples/advanced
+- https://github.com/amzn/style-dictionary/tree/main/examples/advanced/multi-brand-multi-platform
+- https://github.com/amzn/style-dictionary/tree/main/examples/advanced/component-cti
+  - https://amzn.github.io/style-dictionary/#/using_the_cli?id=init <<
+  
+  https://colorkit.co/palette/af92b5-8b7991-6f597a-624b6e-503d5c/
+  https://colorkit.co/palette/00202e-003f5c-2c4875-8a508f-bc5090-ff6361-ff8531-ffa600-ffd380/
+
+- https://web.dev/patterns/components/
+- https://open-props.style/
+https://tr.designtokens.org/format/
+https://github.com/salesforce-ux/theo
+https://diez.org/
+https://theme-ui.com/
+
+https://github.com/GoogleChrome/web.dev/tree/main/src/scss/utilities
+https://piccalil.li/tutorial/build-a-dashboard-with-cube-css/
+- https://web.dev/design-system/css-compositions/
+- https://github.com/GoogleChrome/web.dev/tree/main/src/scss <<
+
+https://web.dev/patterns/layout/
+https://web.dev/patterns/web-vitals-patterns/
+
+https://martinfowler.com/articles/micro-frontends.html
+
+https://blog.logrocket.com/adding-dynamic-colors-with-css/
+https://github.com/NoahBuscher/Inspire#readme
+https://wireflow.co/
+
+https://cloudfour.com/thinks/the-math-behind-nesting-rounded-corners/
+https://quasar.dev/
+https://css-timeline.vercel.app/
+
+// could be a good integration for arqade:
+https://www.lexaloffle.com/pico-8.php
+- https://pico-8.github.io/awesome-PICO-8/#resources
+- https://github.com/leomaurodesenv/game-datasets#readme

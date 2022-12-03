@@ -1,0 +1,4 @@
+contracts and scripts dealing with deploying directly to ethereum
+- main
+- side (polkadot|witness|etc)
+- test (goerli)

@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+// 0. CTI Design TTokens
+@use 'tokens/base';
+
+// 1. Configuration and helpers
+@use 'abstracts/base';
+
+// // 2. Vendors
+@use 'vendors/reset';
+@use 'vendors/normalize';
+
+// // 3. Base Styles
+@use 'base/base';
+
+// // 4. Layout-related sections
+@use 'templates/common' as tmplt;
+
+// // 5. Components
+@use 'components/common' as compnt;
+
+// // 6. Page-specific styles
+@use 'screens/common' as scrn;
+
+// // 7. Themes
+@use 'themes/common' as thm;
+
+// // 8. Overwrites
+@use 'overwrites/shame';

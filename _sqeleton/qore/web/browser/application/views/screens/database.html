@@ -1,0 +1,23 @@
+<% extends("/views/_shell.html") %>
+
+<div>
+  <h3 class="text-5xl mb-5">DownQuark Sqeleton Database</h3>
+</div>
+<ul>
+  <% if (relational) { %>
+  <li><b><em><u>Relational</u></em></b></li>
+  <li><% relational.renderedAt %></li>
+  <li><% relational.databaseMember %></li>
+  <li><% relational.databaseAllMembers %></li>
+  <% } %>
+  <% if (graph) { %>
+    <li><b><em><u>Graph</u></em></b></li>
+    <li><% graph.renderedAt %></li>
+    <li><% graph.userTraits %></li>
+    <% } %>
+  <% if (timeseries) { %>
+  <li><b><em><u>Timeseries</u></em></b></li>
+  <li><% timeseries.renderedAt %></li>
+  <li><% timeseries.showFive %></li>
+  <% } %>
+</ul>

@@ -1,0 +1,13 @@
+node_modules
+.env
+coverage
+coverage.json
+typechain
+typechain-types
+
+#Hardhat files
+web3/abi/artifacts
+!web3/abi/artifacts/.gitkeep
+web3/abi/TO_BE_SYMLINKED/*
+web3/abi/TO_BE_SYMLINKED/**/*
+

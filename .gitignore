@@ -2,6 +2,7 @@
 
 # Compiled
 src/assets/styles/css
+_dist/
 exports/.cache/**/
 exports/_deploy/**/
 exports/logs/**/
@@ -29,5 +30,5 @@ _notes/.ignored/
 !.yarn/versions
 #   !.yarn/cache for Zero-Installs
 #   .pnp.* for non-Zero-Installs
-!.yarn/cache
-#.pnp.*
+# !.yarn/cache
+.pnp.*

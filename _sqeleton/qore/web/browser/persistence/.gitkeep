@@ -1,0 +1,51 @@
+Initial thoughts are below.
+I overscaled it, making it a bit complicated to navigate.
+
+Now that it's working We should be able to reign in the amount of files needed and make it more straight forward.
+
+Current workflow is:
+- the `web/browser/business` has two sub folders \[fe]
+  - `_api` for REST/SOAP/etc \[fe]
+  - `_views` for pages within the application where no ajax would be required \[fe]
+- the `web/browser/business` directory/layer opens the database connection only when needed by importing the specific database driver contained in: \[fe]
+  - `web/browser/network/resources/types/persistence` \[be]
+- `web/browser/business` configures the business logic and exports a DTO with all FE variables parsed \[fe]
+- `web/browser/network/resources/(types/api/* | routes/*)`
+  - imports the DTO
+  - parses and handles all routing
+  - applies FE variables to those from the BE
+  - executes the query \[be]
+- if `types/api` a json object with the query result is rendered as a response \[be]
+- if `routes/*` the query result is returned to be set as a variable and used however is required by the application  \[be]
+
+---
+
+> The business layer performs logic and passes down aggregates/etc
+> The above directories contain the actual sql/aql/etc language queries.
+> Which interact with the database and return the result to be passed up to the business layer
+
+- files within the `read` and `query` directories are organized by business need
+  - e.g. `auth`, `users`
+- index exports based on domain
+  - e.g. `Landing`, `Contact`, etc
+
+  This allows the best of both worlds.
+  - Can write the db interactions based on what we are retreiving
+  - Can import them into the application based on what is required for the view
+
+> e.g.
+> Both the _auth_ and _users_ directories contain multiple queries related to their logical sections
+> The _Landing_ page requires information obtained in a single `users` **read** query \[readCurrentUsers]
+> And also information contained in a single `auth` **query** query \[validateCurrentUser]
+> The export would look similar to
+```
+import * as ReadUsers from './read/users.ts' // file contains 13 total queries
+import * as QueryAuth from './query/auth.ts' // file contains 8 total queries
+
+export const db = {
+  Landing: {
+    getUsers: ReadUsers.readCurrentUsers,
+    isValid: QueryAuth.validateCurrentUser
+  }
+}
+```

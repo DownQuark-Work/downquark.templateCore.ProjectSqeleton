@@ -1,0 +1,36 @@
+hmm... the very beginning of an untested idea:
+_apicall.js_
+```
+export const ApiCall = async (props) => await fetch(`/API/URL/${prosp.id}/${props.whatnot}`)
+```
+_apicall.spec_
+```
+import ComponentUsingApiCall from './ApiComponent'
+import {ApiCall as 'ChaosApiCall'} from './apicall'
+
+const INCORRECT_DATA = { name:13, age:'CHAOS: string instead of number'}
+// convert to HOC etc and pass in INCORRECT_DATA
+const ApiCall = new Proxy(ChaosApiCall, {
+  get:(obj,prop) => {
+    if(Math.floor(Math.random() * 10) === 1) {
+      throw Error('CHAOS: 500 Error')
+    }
+    if(Math.floor(Math.random() * 10) === 2) {
+      console.log('CHAOS: Long response time')
+      await setTimeout(()=>obj[prop],5000)
+    }
+    if(Math.floor(Math.random() * 10) === 3) {
+      console.log('CHAOS: Empty result set')
+      return {}
+    }
+    if(Math.floor(Math.random() * 10) === 4) {
+      console.log('CHAOS: Incorrect data')
+      return INCORRECT_DATA
+    }
+    // ...etc
+    return obj[prop]
+  }
+})
+// spyOn, mock, inject, etc, the ApiCall
+mount(ComponentUsingApiCall)
+```

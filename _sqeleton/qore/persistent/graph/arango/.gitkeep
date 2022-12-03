@@ -1,0 +1,142 @@
+currently using 3.10 nightly
+
+https://www.arangodb.com/docs/stable/installation-mac-osx.html#homebrew
+
+starts on: http://127.0.0.1:8529/
+double click /Applications/ArangoDB3-CLI.app to start server (CLI coming w 3.10)
+start application shell with `% /Applications/ArangoDB3-CLI.app/Contents/Resources/arangosh'`
+initial
+- un: root
+- pw: root
+
+> https://www.arangodb.com/graph-database/ <-- scroll to the end-ish for great use cases and ex(planations|amples)
+> https://github.com/arangodb/interactive_tutorials
+> https://www.arangodb.com/learn/
+> https://www.arangodb.com/graph-analytics-at-enterprise-scale/
+
+
+FOR COMMENTS EXAMPLE:
+- https://www.arangodb.com/learn/search/tutorial/
+`COLLECT can be used to make a result set unique. `
+```
+usersByAge[*].u.name
+The [*] expansion operator is just a handy short-cut. We could also write a subquery:
+
+( FOR temp IN usersByAge RETURN temp.u.name )
+```
+POST AGGREGATION
+```
+OR u IN users
+    FILTER u.active == true
+    COLLECT ageGroup = FLOOR(u.age / 5) * 5,
+            gender = u.gender INTO g
+    SORT ageGroup DESC
+    RETURN {
+        ageGroup,
+        gender,
+        numUsers: LENGTH(g[*]),
+        minAge: MIN(g[*].u.age),
+        maxAge: MAX(g[*].u.age)
+    }
+```
+- https://www.arangodb.com/docs/devel/aql/examples-join.html#many-to-many
+- https://www.arangodb.com/docs/devel/aql/examples-join.html#using-edge-collections
+- https://www.arangodb.com/docs/devel/aql/examples-join.html#outer-joins
+
+Docs
+- [best starting point](/dq/dq/downquark.ventureCore.KnowledgeBase/src/Persistence/ArangoDB/devel
+opment/_tutorials/graphcourse/Queries.md)
+
+https://www.arangodb.com/docs/devel/quick-start-guide.html
+
+- https://www.arangodb.com/docs/devel/aql/examples.html
+- /Users/mlnck/Downloads/_brave/ArangoDB-GraphCourse_Beginners.pdf 
+
+- https://www.arangodb.com/docs/devel/aql/
+  - https://www.arangodb.com/docs/devel/aql/invocation-with-web-interface.html
+
+- https://www.arangodb.com/docs/devel/graphs.html#example-graphs
+
+---
+---
+
+  https://www.arangodb.com/2016/11/realize-surveys-graph-database/
+  https://www.arangodb.com/docs/devel/programs.html
+  > Orgainzing vertices/edges:
+  > > https://www.arangodb.com/docs/devel/graphs-traversals-example-data.html
+
+  https://www.arangodb.com/docs/devel/aql/examples-data-modification-queries.html
+  https://www.arangodb.com/docs/devel/aql/examples-combining-queries.html
+
+  DUMP: 
+  ```
+  % cd <HERE>
+  % /Applications/ArangoDB3-CLI.app/Contents/Resources/arangodump --output-directory ./arangodump --server.database dq --overwrite true # --all-databases true --dump-data false
+  ```
+LOAD DATA:
+```
+% cd <HERE>
+% /Applications/ArangoDB3-CLI.app/Contents/Resources/arangorestore --input-directory "dump"
+```
+
+DIFF:
+```
+// input document 1
+LET doc1 = {
+  "foo": "bar",
+  "a": 1,
+  "b": 2
+}
+
+// input document 2
+LET doc2 = {
+  "foo": "baz",
+  "a": 1,
+  "c": 3
+}
+
+// collect attributes present in doc1, but missing in doc2
+LET missing = (
+  FOR key IN ATTRIBUTES(doc1)
+  FILTER ! HAS(doc2, key)
+  RETURN {
+    [ key ]: doc1[key]
+  }
+)
+
+// collect attributes present in both docs, but that have different values
+LET changed = (
+  FOR key IN ATTRIBUTES(doc1)
+    FILTER HAS(doc2, key) && doc1[key] != doc2[key]
+    RETURN {
+      [ key ] : {
+        old: doc1[key],
+        new: doc2[key]
+      }
+    }
+)
+
+// collect attributes present in doc2, but missing in doc1
+LET added = (
+  FOR key IN ATTRIBUTES(doc2)
+    FILTER ! HAS(doc1, key)
+    RETURN {
+      [ key ]: doc2[key]
+    }
+)
+
+// return final result
+RETURN {
+  "missing": missing,
+  "changed": changed,
+  "added": added
+}
+/*
+```
+---
+
+Deno drivers
+- https://github.com/Tnifey/arango
+- https://github.com/envis10n/darango
+Javascript driver reference:
+- https://www.arangodb.com/docs/devel/drivers/js-getting-started.html#install 

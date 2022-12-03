@@ -1,0 +1,18 @@
+{
+  "name": "dq.template.projectsqeleton",
+  "version": "0.0.1-alpha",
+  "packageManager": "yarn@3.2.2",
+  "private": true,
+  "workspaces": [
+    "_sqeleton/*",
+    "_sqeleton/qore/*",
+    "_sqeleton/qore/web/extensions/*",
+    "_sqeleton/qore/web/plugins/"
+  ],
+  "dependencies": {
+    "lit": "^2.2.8"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="h-full w-full">
+  <head>
+    <title>DownQuark Sqeleton Framework</title>
+  </head>
+  <body style="background: #1e293b; color:#cbd5e1;">
+    <a style="color:white" href="/">&lt;&lt; :root:</a>
+    <% yield %>
+    <!--App shell was dropped off-->
+    <!--https://developer.chrome.com/docs/workbox/app-shell-model/-->
+    <script src="/_assets/js/_v1/_qomponents/dq.qomponents.umd.js"></script>
+  </body>
+</html>
+
+<!-- 
+  I like the above version better, but below is another way to incorporate a MicroFrontEnd Service Application
+  - full source here: https://martinfowler.com/articles/micro-frontends.html#TheExampleInDetail
+-->
+
+<!-- 
+  <html>
+  <head>
+    <title>Feed me!</title>
+  </head>
+  <body>
+    <h1>Welcome to Feed me!</h1>
+  -->
+    <!-- These scripts don't render anything immediately -->
+    <!-- Instead they each define a custom element type -->
+<!--
+    <script src="https://browse.example.com/bundle.js"></script>
+    <script src="https://order.example.com/bundle.js"></script>
+    <script src="https://profile.example.com/bundle.js"></script>
+
+    <div id="micro-frontend-root"></div>
+
+    <script type="text/javascript">
+      // These element types are defined by the above scripts
+      const webComponentsByRoute = {
+        '/': 'micro-frontend-browse-restaurants',
+        '/order-food': 'micro-frontend-order-food',
+        '/user-profile': 'micro-frontend-user-profile',
+      };
+      const webComponentType = webComponentsByRoute[window.location.pathname];
+
+      // Having determined the right web component custom element type,
+      // we now create an instance of it and attach it to the document
+      const root = document.getElementById('micro-frontend-root');
+      const webComponent = document.createElement(webComponentType);
+      root.appendChild(webComponent);
+    </script>
+  </body>
+</html>
+-->

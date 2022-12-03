@@ -1,0 +1,28 @@
+<% extends("/views/_shell.html") %>
+
+<div>
+  <h3 class="text-5xl mb-5">DownQuark Sqeleton</h3>
+  <div>
+    <% if (landing.renderedAt % 2 === 0) { %>
+      <% include_partial("/views/partials/landing/even.html") %>
+      <hr />
+    <% } %>
+    <% if (landing.renderedAt % 2 !== 0) { %>
+      <% include_partial("/views/partials/landing/odd.html") %>
+      <hr />
+    <% } %>
+</div>
+<ul>
+  <li><% landing.renderedAt %></li>
+  <li><% landing.randomNum %></li>
+</ul>
+<p>
+  <a style="color:white" href="/db/relational">Relational Database</a>
+  | <a style="color:white" href="/db/graph">Graph Database</a> 
+  | <a style="color:white" href="/db/timeseries">Timeseries Database</a> 
+</p>
+<div>
+  <my-element></my-element>
+</div>
+
+<script src="/_assets/js/_v1/_modules/landing/get.js"></script>

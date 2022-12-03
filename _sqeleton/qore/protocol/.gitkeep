@@ -1,0 +1,21 @@
+https://docs.soliditylang.org/en/v0.8.17/
+
+https://ethereum.stackexchange.com/questions/62028/what-is-the-difference-between-web3-js-and-ethers-js
+👆 - seems like ethers wins
+- https://github.com/adrianmcli/web3-vs-ethers
+
+https://remix-ide.readthedocs.io/en/latest/remix_commands.html#a-few-ethers-js-examples
+
+https://fravoll.github.io/solidity-patterns/ <<<< 
+
+`main`, `test`, and `side` are valid directories here because there may be code relating directly to the interfaces of those blockchains.
+
+> GREAT OVERVIEW: https://about.mones.io/economy.html
+
+brew install remix-ide
+
+https://github.com/frankiefab100/Blockchain-Development-Resources
+https://www.bitdegree.org/course/learn-solidity-space-doggos
+https://cryptozombies.io/en/course/
+
+https://learnxinyminutes.com/docs/solidity/

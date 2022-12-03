@@ -1,0 +1,21 @@
+{
+  "name": "doqumentation",
+  "version": "0.0.1",
+  "packageManager": "yarn@3.2.2",
+  "author": "mlnck",
+  "description": "DownQuark Skeleton Documentation",
+  "license": "GNU",
+  "downquarkDir": "~/.dqrx",
+  "homepage": "downquark.work",
+  "private": true,
+  "main": "index.js",
+  "workspaces": [
+    "styleguide/"
+  ],
+  "dependencies": {
+    "lit": "^2.2.8"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
