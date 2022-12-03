@@ -1,4 +1,6 @@
 # QLI
+> TODO: Rewrite in Rust
+
 ## DownQuark's Base CLI
 > To be used to manage all aspects of the framework.
 
