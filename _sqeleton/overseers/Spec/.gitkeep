@@ -34,4 +34,3 @@ const ApiCall = new Proxy(ChaosApiCall, {
 // spyOn, mock, inject, etc, the ApiCall
 mount(ComponentUsingApiCall)
 ```
-Then can extend to be used in

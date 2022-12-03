@@ -1,5 +1,7 @@
-DENO:  https://deno.land/x/analogger@v0.2.0
+DENO: https://github.com/denoland/deno_std/tree/main/log
+~~DENO:  https://deno.land/x/analogger@v0.2.0~~
 
+https://mockoon.com/
 https://github.com/brianvoe/gofakeit << fake log
 - https://github.com/mingrammer/flog  << fake data
 

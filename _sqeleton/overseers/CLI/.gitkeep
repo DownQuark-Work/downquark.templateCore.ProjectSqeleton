@@ -1,3 +1,35 @@
+https://linuxhandbook.com/docker-alternatives/
+
+EXAMPLES:
+https://github.com/Im-Beast/deno_tui
+https://github.com/irandeno/interaction ><><<><>< Interaction
+- https://github.com/topics/cui?l=javascript
+  - https://github.com/hikalium/slack-tui
+  - https://github.com/astefanutti/kubebox
+  - https://github.com/aksakalli/gtop
+- https://github.com/topics/tui?l=javascript
+  - https://github.com/AdrianSchneider/jsonfui
+  - https://github.com/Thann/pingg
+  - https://github.com/Alcadramin/tinance <- no blessed
+  - https://github.com/bergsans/crude-dev-tools <- no blessed - probably all we'd need
+  - https://github.com/siddharthkp/cost-of-modules <- no blessed
+
+- https://github.com/sindresorhus/awesome-nodejs#command-line-utilities
+  - https://github.com/sindresorhus/term-size
+- https://ondras.github.io/rot.js/hp/
+  - https://github.com/ondras/rot.js/blob/master/package.json
+
+Easter Egg:
+- https://lxgr-linux.github.io/pokete/
+
+## usable
+- https://github.com/chalk/chalk
+- https://github.com/terkelg/prompts
+- ~~https://github.com/SBoudrias/Inquirer.js~~
+- https://github.com/enquirer/enquirer
+- https://ascii.today/
+- https://github.com/chjj/blessed
+
 DENO: https://drash.land/line/v1.x/getting-started/introduction - look into
 Rust: https://github.com/joaocarvalhoopen/How_to_learn_modern_Rust
 (Ba|z)sh: 
@@ -9,3 +41,6 @@ Rust: https://github.com/joaocarvalhoopen/How_to_learn_modern_Rust
 https://github.com/davidtheclark/cosmiconfig
 
 https://bashly.dannyb.co/
+
+https://excuser.herokuapp.com/ << fun
+- https://excuser.herokuapp.com/v1/excuse

@@ -4,6 +4,7 @@ DB - https://dbdocs.io/
 - https://dbdocs.io/dq-mlnck/dq-demo
   - `% npx dbdocs login`
   - `% npx dbdocs build relation-query.dbml --project=dq-demo`
+- https://dbdiagram.io/d/630c565df1a9b01b0ffd2f7c
 
 
   https://github.com/davidtheclark/cosmiconfig
