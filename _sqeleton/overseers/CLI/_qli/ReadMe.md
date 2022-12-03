@@ -1,5 +1,6 @@
 # QLI
 > TODO: Rewrite in Rust
+> - this will help: https://docs.rs/termion/latest/termion/
 
 ## DownQuark's Base CLI
 > To be used to manage all aspects of the framework.
