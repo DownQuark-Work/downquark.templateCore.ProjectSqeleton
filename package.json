@@ -1,7 +1,7 @@
 {
   "name": "dq.template.projectsqeleton",
   "version": "0.0.1-alpha",
-  "packageManager": "yarn@3.2.2",
+  "packageManager": "yarn@3.3.0",
   "private": true,
   "workspaces": [
     "_sqeleton/*",
