@@ -1,0 +1,22 @@
+{
+  "component": {
+    "comment": "This should be used sparingly. Attempt to define tokens by CTI when applicable.",
+    "socialIcons": {
+      "comment": "propertiesToCTI method ensures these component keys are put in the correct files. (padding -> dimensions, blue&white -> colors)",
+      "padding": { "value": "12px" },
+      "twitter": {
+        "color": {
+          "blue": {"value": "#1da1f2cc"},
+          "white":{"value": "white" }
+        },
+        "content-after":{"value":"\"opens in new link\""}
+      },
+      "facebook": {
+        "color": {
+          "blue": {"value": "#1da1f2cc"},
+          "white":{"value": "white" }
+        }
+      }
+    }
+  }
+}

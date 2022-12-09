@@ -6,4 +6,3 @@ If you have to override a section of any vendor, I recommend you have an 8th fol
 
 Reference: [Sass Guidelines](http://sass-guidelin.es/) > [Architecture](http://sass-guidelin.es/#architecture) > [Vendors folder](http://sass-guidelin.es/#vendors-folder)
 
-> NOTE: `_dq-normalize.scss` is a DownQuark created and maintained file to bring reset and normalize closer to our branding.

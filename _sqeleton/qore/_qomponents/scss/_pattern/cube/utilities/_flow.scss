@@ -1,0 +1,40 @@
+// elements within `.flow` will have a top margin of 1em, unless --flow-space is defined.
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+// DELETE COMMENTS WHEN COMPONENT VALIDATED
+// .stack > * { margin-block: 0; } 
+// .stack.recursive * { margin-block: 0; } 
+// .stack > * + * { margin-block-start: var(--space, 1.5em); }
+// .stack.recursive * + * { margin-block-start: var(--space, 1.5em); }
+// .stack[large] > * + * { margin-block-start: 3rem; }
+// .stack.recursive[large] * + * { margin-block-start: 3rem; }
+// .stack[small] > * + * { margin-block-end: 0.5rem; }
+// .stack.recursive[small] * + * { margin-block-end: 0.5rem; }
+// .stack-exception,
+// .stack-exception + * {
+  //   --space: 3rem;
+  // }
+  .stack { // https://every-layout.dev/layouts/stack/
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &.recursive {
+    * { margin-block: 0; }
+    * + * { margin-block-start: var(--space, 1.5em); }
+    &[large] * + * { margin-block-start: 3rem; }
+    &[small] * + * { margin-block-end: 0.5rem; }
+  }
+  > {
+    * { margin-block: 0; }
+    * + * { margin-block-start: var(--space, 1.5em); }
+    [split] { margin-block-end: auto; } // following sibling will be bottom aligned
+  }
+  &[large] > * + * { margin-block-start: 3rem; }
+  &[small] > * + * { margin-block-end: 0.5rem; }
+
+  &-exception, &-exception + * { --space: 3rem }
+  &:only-child { block-size: 100%; } // allows correct split layout with single child
+}

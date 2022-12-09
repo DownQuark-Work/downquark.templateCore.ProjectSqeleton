@@ -6,6 +6,6 @@
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "editor.tabSize": 2,
-  "deno.enable": true,
+  "deno.enable": false,
   "deno.unstable": true
 }

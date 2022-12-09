@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+// 0. CTI Design Tokens
+@use 'tokens/base';
+
+// 1. Configuration and helpers
+@use 'abstracts/base';
+
+// // 2. Vendors
+// @use 'vendors/reset'; // 'vendors/reset';SERVICE
+@use 'vendors/reset'; // 'vendors/reset';SERVICE
+@use 'vendors/normalize';
+
+// // 3. Base Styles
+@use '_pattern/seven-to-one/base/base';
+
+// // 4. Layout-related sections
+@use '_pattern/seven-to-one/templates/common' as tmplt;
+
+// // 5. Components
+@use '_pattern/seven-to-one/components/common' as compnt;
+
+// // 6. Page-specific styles
+@use '_pattern/seven-to-one/screens/common' as scrn;
+
+// // 7. Themes
+@use '_pattern/seven-to-one/themes/common' as thm;
+
+// // 8. Overwrites
+@use 'overwrites/shame';

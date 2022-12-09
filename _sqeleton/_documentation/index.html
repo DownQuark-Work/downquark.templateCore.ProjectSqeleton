@@ -5,35 +5,65 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-demo@latest/dist/index.min.css" />
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-demo@latest/dist/index.min.css" />
-
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sushantrahate/docsify-darkly-theme/css/darkly.css">
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css">
+	
+	<script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 </head>
 
 <body>
 	<div id="app">Loading... </div>
 	<script>
+		mermaid.initialize({ startOnLoad: false });
+console.log('this.origin.code: ', this.origin.code)
 		window.$docsify = {
+			// name: '<span style="display:block; text-align:right; padding-right:1rem">TextOnly: Artist Platform Documentation</span>',
 			auto2top: true,
+			basePath: '/_v1/',
+			executeScript: true,
 			formatUpdated: '{YYYY}.{MM}./{DD}[{HH}:{mm}]',
-			homepage: '__projectname.md',
-			loadNavbar: true,
-			loadSidebar: true,
-			name: '<span style="display:block; text-align:right; padding-right:1rem">DownQuark Template Documentation</span>',
+			homepage: '__artistplatform.md',
+			loadNavbar: '_navbar.md',
+			loadSidebar: '_sidebar.md',
+			logo: '../_assets/media/logo.png',
+			name: 'Artist Platform Documentation',
 			nameLink: '/',
 			notFoundPage: '_404.md',
-			repo: 'DownQuark-Work/downquark.templateCore.ProjectSqeleton', // 'https://github.com/DownQuark-Work/downquark.templateCore.ProjectSqeleton',
-			// logo: '/_media/icon.svg',
-  }
-</script>
+			repo: 'DownQuark-Work/downquark.saasApp.ArtistPlatform', // 'https://github.com/DownQuark-Work/downquark.saasApp.ArtistPlatform',
+			// themeColor: 'red'
+		}
+		// markdown langs separated for easier scalability
+		window.$docsify.markdown = {
+				renderer: {
+					code: function(code, lang) {
+						if (lang === 'mermaid') return `<div class="mermaid">${mermaid.render(lang, code)}</div>`
+						return this.origin.code.apply(this, arguments);
+					}
+				}
+			}
+		// plugins separated for easier scalability
+		window.$docsify.plugins = [ function (hook, vm) {
+			hook.afterEach((html, next)  => next(html))
+			hook.beforeEach(html => html)
+		}]
+		console.info(`I feel like the 'window.$docsify.routes' [https://docsify.js.org/#/configuration?id=routes] holds the answer to the ability\nto make custom logic when loading the nav and sidebar`)
+		// routes separated for easier scalability
+		window.$docsify.routes = {
+			'/design-system/components/(.*)': (route, matched, next) => { // extend for custom component routing functionality
+				next() // below shows for async/fetch example
+				/* fetch('path/to/fetch').then(response => next()).catch(err => next(err.toString())) */
+			}
+		}
+	</script>
 	<script src="//cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
 	<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+	<script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+	<script src="//unpkg.com/prismjs/components/prism-scss.min.js"></script>
+	<script src="//unpkg.com/prismjs/components/prism-toml.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-demo@latest/dist/index.min.js"></script>
-	<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
-	<script src="//cdn.jsdelivr.net/gh/lit/dist@2.2.8/all/lit-all.min.js"></script>
 
-	<script src="styleguide/components/litqomponent/dq.qomponents.umd.js"></script>
 	<!-- 
 		Production
 		<script src="//cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>

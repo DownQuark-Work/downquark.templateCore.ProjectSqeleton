@@ -1,3 +1,0 @@
-- [PROJECT_NAME](/)
-- [Components](styleguide/components.md 'PROJECT_NAME components')
-  - [Component](styleguide/components/component 'component')

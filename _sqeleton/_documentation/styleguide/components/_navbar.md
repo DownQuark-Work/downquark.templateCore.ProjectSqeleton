@@ -1,4 +1,0 @@
-- [PROJECT_NAME](/)
-- [Style Guide](styleguide/about)
-  - [Component](styleguide/components/component)
-  - [lit POC](styleguide/components/litqomponent/poc)

@@ -1,0 +1,39 @@
+{
+  "size": {
+    "scale": {
+      "comment":"[perfect fourth](https://www.modularscale.com/?16&px&1.333)",
+      "modular-ramp":{
+        "up":{
+          "6":{"value":"89.764px"},
+          "5":{"value":"67.34px"},
+          "4":{"value":"50.517px"},
+          "3":{"value":"37.897px"},
+          "2":{"value":"28.43px"},
+          "1":{"value":"21.328px"}
+        },
+        "base":{"value":"16px"},
+        "down":{
+          "1":{"value":"12.003px"},
+          "2":{"value":"9.005px"},
+          "3":{"value":"6.755px"},
+          "4":{"value":"5.068px"},
+          "5":{"value":"3.802px"},
+          "6":{"value":"2.852px"}
+        }
+      }
+    },
+    "space": {
+      "comment": "Utilizing the 8pt grid system",
+      "void":{"value":"0"},
+      "downquark":{"value":"2px"},
+      "upquark":{"value":"4px"},
+      "proton":{"value":"8px"},
+      "nucleus":{"value":"12px"},
+      "atom":{"value":"16px"},
+      "molecule":{"value":"24px"},
+      "element":{"value":"36px"},
+      "compound":{"value":"48"},
+      "mole":{"value":"72px"}
+    }
+  }
+}

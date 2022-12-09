@@ -1,0 +1,10 @@
+{
+  "typography": {
+    "primary-font":{
+      "family":{"value": "{font.family.base.value}"},
+      "lineheight":{"value": "{font.lineheight.base.value}"},
+      "scale":{"value": "{size.scale.modular-ramp.base.value}"},
+      "weight":{"value": "{font.weight.base.value}"}
+    }
+  }
+}

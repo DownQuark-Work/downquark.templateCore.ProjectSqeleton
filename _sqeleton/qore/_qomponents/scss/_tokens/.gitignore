@@ -1,0 +1,6 @@
+*css
+
+# font vs typography note:
+# "font-includes":["font-family","font-size","font-weight","text-align", "etc"],
+# "typography-CTI-includes":"typography will be the collected styling of what is defined in the font.json file.",
+# "cont":"for instance. typography could include `typography-header-paragraph-title:` which would contain values of {font-family:}"

@@ -1,20 +1,23 @@
 import {LitElement, html, css} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 
-@customElement("my-element")
-export class MyElement extends LitElement {
+import '../../scss/main.cube.scss'
+// may have to use [this](https://lit.dev/docs/components/styles/#external-stylesheet) until I can think of a better way
+
+@customElement("atom-button")
+export class AtomButton extends LitElement {
   // Styles are scoped to this element: they won't conflict with styles
   // on the main page or in other components. Styling API can be exposed
   // via CSS custom properties.
   static styles = css`
-  
-    :host {
+    span {
+      color: black;
       display: inline-block;
       padding: 10px;
-      background: lightgray;
+      background: hsl(50 80% 40%);
     }
     .planet {
-      color: var(--planet-color, blue);
+      color: var(--planet-color, white);
     }
   `;
 
@@ -22,7 +25,7 @@ export class MyElement extends LitElement {
 
   // Define reactive properties--updating a reactive property causes
   // the component to update.
-  @property() greeting = "Hello";
+  @property() greeting = "Hello!!!";
   @property() planet = "World";
 
   // The render() method is called any time reactive properties change.
