@@ -8,7 +8,7 @@ As opposed to a file... but I want to see if what it's going to take to get the 
 ```html preview
 <style>
     .mars {
-      --planet-color: blue;
+      --planet-color: red;
     }
   </style>
 <atom-timeline></atom-timeline>

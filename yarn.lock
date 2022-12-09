@@ -519,13 +519,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lit/reactive-element@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "@lit/reactive-element@npm:1.5.0"
-  checksum: 8f87a2d9d7630c26ad0dd6b9a8ad46bb184fcec11e04ded3d487859a6cfebbe871d07a8271dfdf3f2d4b9688d27c17de0f8fa3fc690602f5b86d742f969a3ca4
-  languageName: node
-  linkType: hard
-
 "@metamask/eth-sig-util@npm:^4.0.0":
   version: 4.0.1
   resolution: "@metamask/eth-sig-util@npm:4.0.1"
@@ -2767,6 +2760,7 @@ __metadata:
   resolution: "dq.template.projectsqeleton@workspace:."
   dependencies:
     lit: ^2.2.8
+    sass: ^1.56.1
     typescript: ^4.7.4
   languageName: unknown
   linkType: soft
@@ -3455,7 +3449,7 @@ __metadata:
 
 "fsevents@patch:fsevents@~2.1.1#~builtin<compat/fsevents>":
   version: 2.1.3
-  resolution: "fsevents@patch:fsevents@npm%3A2.1.3#~builtin<compat/fsevents>::version=2.1.3&hash=31d12a"
+  resolution: "fsevents@patch:fsevents@npm%3A2.1.3#~builtin<compat/fsevents>::version=2.1.3&hash=18f3a7"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -3464,7 +3458,7 @@ __metadata:
 
 "fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -4774,12 +4768,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lit-html@npm:^2.5.0":
-  version: 2.5.0
-  resolution: "lit-html@npm:2.5.0"
+"lit-html@npm:^2.4.0":
+  version: 2.4.0
+  resolution: "lit-html@npm:2.4.0"
   dependencies:
     "@types/trusted-types": ^2.0.2
-  checksum: 5376c423253037fbe1cb24f8178104eca6186df19d06bc91ad8d5d251af8467fd269a6c7e97ffaa5e9872a8dd453a40c3ffbe23c81d2823078f59be03f94c1bc
+  checksum: fb2ff513a23ce35783c231d3c184103b681f62792e2fa500b17f0bbd93b1a3168153b3fd52ccaca2c25ee5bb7f4006b657fc15ae893fa5dc733774c01eda5dce
   languageName: node
   linkType: hard
 
@@ -4795,13 +4789,13 @@ __metadata:
   linkType: hard
 
 "lit@npm:^2.4.1":
-  version: 2.5.0
-  resolution: "lit@npm:2.5.0"
+  version: 2.4.1
+  resolution: "lit@npm:2.4.1"
   dependencies:
-    "@lit/reactive-element": ^1.5.0
+    "@lit/reactive-element": ^1.4.0
     lit-element: ^3.2.0
-    lit-html: ^2.5.0
-  checksum: 7f62ef9da4b21d37f8b476d8425903a22ed9c1e5b26597c811cb38760d28baf6cd83865457c971d1ac77d6ad59ecc73cd1870fa3478a08d0beffa0b74b016bec
+    lit-html: ^2.4.0
+  checksum: 0f0673bd8f7c31d3f00cef0be26683f46e34048466c54b8663e8f13a7dbb6038f06aafa9abf3f0a6635c2d702fde7319d4f88b2bd9e2bd512f81c95fb691ca87
   languageName: node
   linkType: hard
 
@@ -5279,15 +5273,6 @@ __metadata:
   dependencies:
     yallist: ^4.0.0
   checksum: a30d083c8054cee83cdcdc97f97e4641a3f58ae743970457b1489ce38ee1167b3aaf7d815cd39ec7a99b9c40397fd4f686e83750e73e652b21cb516f6d845e48
-  languageName: node
-  linkType: hard
-
-"minipass@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "minipass@npm:4.0.0"
-  dependencies:
-    yallist: ^4.0.0
-  checksum: 7a609afbf394abfcf9c48e6c90226f471676c8f2a67f07f6838871afb03215ede431d1433feffe1b855455bcb13ef0eb89162841b9796109d6fed8d89790f381
   languageName: node
   linkType: hard
 
@@ -6155,13 +6140,12 @@ __metadata:
     "@types/node": ^18.6.1
     glob: ^8.0.3
     lit: ^2.4.1
-    node-sass: ^8.0.0
     rollup: ^2.77.1
     rollup-plugin-commonjs: ^10.1.0
     rollup-plugin-node-resolve: ^5.2.0
     rollup-plugin-scss: ^4.0.0
     rollup-plugin-typescript: ^1.0.1
-    sass: ^1.56.2
+    sass: ^1.56.1
     style-dictionary: ^3.7.1
     ts-node: ^10.9.1
     tslib: ^2.4.0
@@ -6462,14 +6446,14 @@ __metadata:
 
 "resolve@patch:resolve@1.1.x#~builtin<compat/resolve>":
   version: 1.1.7
-  resolution: "resolve@patch:resolve@npm%3A1.1.7#~builtin<compat/resolve>::version=1.1.7&hash=3bafbf"
+  resolution: "resolve@patch:resolve@npm%3A1.1.7#~builtin<compat/resolve>::version=1.1.7&hash=07638b"
   checksum: e9dbca78600ae56835c43a09f1276876c883e4b4bbd43e2683fa140671519d2bdebeb1c1576ca87c8c508ae2987b3ec481645ac5d3054b0f23254cfc1ce49942
   languageName: node
   linkType: hard
 
 "resolve@patch:resolve@1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.1.6#~builtin<compat/resolve>":
   version: 1.17.0
-  resolution: "resolve@patch:resolve@npm%3A1.17.0#~builtin<compat/resolve>::version=1.17.0&hash=c3c19d"
+  resolution: "resolve@patch:resolve@npm%3A1.17.0#~builtin<compat/resolve>::version=1.17.0&hash=07638b"
   dependencies:
     path-parse: ^1.0.6
   checksum: 6fd799f282ddf078c4bc20ce863e3af01fa8cb218f0658d9162c57161a2dbafe092b13015b9a4c58d0e1e801cf7aa7a4f13115fea9db98c3f9a0c43e429bad6f
@@ -6478,7 +6462,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.11.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.11.1#~builtin<compat/resolve>":
   version: 1.22.1
-  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=c3c19d"
+  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=07638b"
   dependencies:
     is-core-module: ^2.9.0
     path-parse: ^1.0.7
@@ -6717,16 +6701,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.56.2":
-  version: 1.56.2
-  resolution: "sass@npm:1.56.2"
+"sass@npm:^1.56.1":
+  version: 1.56.1
+  resolution: "sass@npm:1.56.1"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 7b1f524d04bc42df3bac6dc5201ff7475635b7df9a1390430ed5bd58b6a73ea1ae58b83ccea8da293cb77b85b4c848faf5f2779ca4b91b9303948c251d0ddca4
+  checksum: 78e693e5992b149574c95d5adfe39ca3e5b97d80befa11191a20d1daa41fe201a98ac099beab726cd3095e2d2e7991a2c408ba0fcc3fa9f525879de7eee18dad
   languageName: node
   linkType: hard
 
@@ -7477,16 +7461,16 @@ __metadata:
   linkType: hard
 
 "tar@npm:^6.0.2":
-  version: 6.1.13
-  resolution: "tar@npm:6.1.13"
+  version: 6.1.12
+  resolution: "tar@npm:6.1.12"
   dependencies:
     chownr: ^2.0.0
     fs-minipass: ^2.0.0
-    minipass: ^4.0.0
+    minipass: ^3.0.0
     minizlib: ^2.1.1
     mkdirp: ^1.0.3
     yallist: ^4.0.0
-  checksum: 8a278bed123aa9f53549b256a36b719e317c8b96fe86a63406f3c62887f78267cea9b22dc6f7007009738509800d4a4dccc444abd71d762287c90f35b002eb1c
+  checksum: 49d72e4420944e7ede2782d6b0826a6ede6cdab23c7de63470917e7a78166bc4d5b1a96279d3d79a85f1ba5a17cd37c0acbb3cbff19a07447691445b8b051c55
   languageName: node
   linkType: hard
 
@@ -7804,11 +7788,11 @@ __metadata:
 
 "typescript@patch:typescript@^4.7.4#~builtin<compat/typescript>":
   version: 4.8.3
-  resolution: "typescript@patch:typescript@npm%3A4.8.3#~builtin<compat/typescript>::version=4.8.3&hash=aae4e6"
+  resolution: "typescript@patch:typescript@npm%3A4.8.3#~builtin<compat/typescript>::version=4.8.3&hash=f456af"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 2222d2382fb3146089b1d27ce2b55e9d1f99cc64118f1aba75809b693b856c5d3c324f052f60c75b577947fc538bc1c27bad0eb76cbdba9a63a253489504ba7e
+  checksum: 0404a09c625df01934ef774b45ce1ca57ccae41cd625fcdbb82056715320d9329e70d9d75c2c732ec6ef947444ca978c189a332b71fa21f5c1437d5a83e24906
   languageName: node
   linkType: hard
 

@@ -17,7 +17,7 @@ export class AtomButton extends LitElement {
       background: hsl(50 80% 40%);
     }
     .planet {
-      color: var(--planet-color, white);
+      color: var(--planet-color, black);
     }
   `;
 

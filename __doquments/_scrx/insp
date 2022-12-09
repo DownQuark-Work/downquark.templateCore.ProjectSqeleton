@@ -1,0 +1,82 @@
+## Image Manipulation
+- https://goart.fotor.com/?effect=269 \[structuralism]
+- https://ribbet.ai/Cartoonize <-- holy ! - maybe for the "about the author" on YOUnique Tales (or something)
+- https://justinpinkney.github.io/toonify-api-docs/
+
+https://www.designyourway.net/blog/inspiration/the-simple-yet-complicated-mobile-ui-list-design-43-examples/
+
+https://lottiefiles.com/
+
+https://startupresources.io/
+
+> I don't think esbuild supports `umd` export format - but look into it when it does
+> > https://esbuild.github.io/
+> > https://github.com/esbuild/community-plugins
+> > https://github.com/glromeo/esbuild-sass-plugin/
+
+https://github.com/troxler/awesome-css-frameworks
+
+https://readme.so/editor
+- https://github.com/LappleApple/feedmereadmes
+
+## Design
+### grid
+- https://gridlover.net/try.html
+- https://www.modularscale.com/ <-- modular text sizing calculator
+
+### Insp
+- https://landings.dev/orange-purple-dark
+
+### Color Pallet
+- https://colorable.jxnblk.com/
+- https://mycolor.space/
+
+- https://roadmap.sh/design-system
+
+### Styling (to integrate)
+> don't spend too much time worrying about the cascade for - but when time permits:
+- https://lit.dev/docs/components/styles/#shadow-dom
+- https://web.dev/constructable-stylesheets/
+
+Insp: https://landings.dev/
+- Better than octopus.do: `% cd /Applications/Wireflow && ys` <<<<<<
+- https://www.checklist.design/
+- https://manuals.gravitydept.com/
+
+### Styling (to integrate)
+- [pico](https://github.com/picocss/pico)
+- [skeleton](http://getskeleton.com/)
+- [water](https://watercss.kognise.dev/)
+- [picnic](https://picnicss.com/)
+- [pure](https://purecss.io/)
+- https://gerillass.com/ - good mixins/funcs to leverage
+- https://lit.dev/docs/components/styles/#shadow-dom
+- https://web.dev/constructable-stylesheets/
+
+- https://lhammer.cn/You-need-to-know-css/#/ <-- this is a **_REALLY**_ good resource for _Artist Platform_ in particular
+- https://layout.bradwoods.io/ <-- color scheme for AP?
+- https://csslayout.io/
+- https://uiverse.io/
+- http://bada55.io/
+
+- https://dev.to/lissy93/super-useful-css-resources-1ba3
+
+## FONTS:
+- Imbue
+- Roboto
+  - Pariing in use: https://typ.io/s/1rpu
+-  
+- Another pairing
+-
+- Adelle << this pairing may have beaten out the below
+- Brandon Grotesque
+  - https://typ.io/s/l9yv
+-
+- Alegreya
+- Comfortaa
+-
+- Righteous << current
+- Corben << favorite pairing
+-
+- Vollkorn << second
+- Titillium Web << place
