@@ -1,3 +1,6 @@
 - [PROJECT_NAME](/)
 - [Design System](design-system/about "The Project Design System")
 - [:computer: Technical](technical.md "The Project Page Title")
+- Atoms
+  - [Button](design-system/components/atoms/button "Atomic Button href Title")
+  - [Timeline](design-system/components/atoms/timeline "Timeline Button href Title")
