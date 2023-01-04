@@ -25,15 +25,15 @@
     "space": {
       "comment": "Utilizing the 8pt grid system",
       "void":{"value":"0"},
-      "downquark":{"value":"2px"},
-      "upquark":{"value":"4px"},
-      "proton":{"value":"8px"},
-      "nucleus":{"value":"12px"},
-      "atom":{"value":"16px"},
-      "molecule":{"value":"24px"},
-      "element":{"value":"36px"},
-      "compound":{"value":"48"},
-      "mole":{"value":"72px"}
+      "bottomquark":{"value":"2px"},
+      "downquark":{"value":"4px"},
+      "quark":{"value":"8px"},
+      "upquark":{"value":"12px"},
+      "topquark":{"value":"16px"},
+      "photon":{"value":"24px"},
+      "electron":{"value":"36px"},
+      "neutron":{"value":"48"},
+      "atom":{"value":"72px"}
     }
   }
 }
