@@ -1,5 +1,6 @@
 # Design System
-Run with: `$ cd .. && cad`
+`$ cd .. && caddy run`
+
 
 ## Resourves for alternatives and inspiration
 - https://daverupert.com/2022/08/modern-alternatives-to-bem

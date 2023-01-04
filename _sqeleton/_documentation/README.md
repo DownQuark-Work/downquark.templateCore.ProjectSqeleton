@@ -1,2 +1,2 @@
 # _documentation
-$ cad
+`$ cd <HERE> && caddy run`

@@ -1,3 +1,6 @@
 - [PROJECT_NAME](/)
 - [Components](design-system/components.md 'PROJECT_NAME components')
   - [Component](design-system/components/component 'component')
+  - Atoms
+  - [Button](design-system/components/atoms/button "Atomic Button href Title")
+  - [Timeline](design-system/components/atoms/timeline "Timeline Button href Title")
