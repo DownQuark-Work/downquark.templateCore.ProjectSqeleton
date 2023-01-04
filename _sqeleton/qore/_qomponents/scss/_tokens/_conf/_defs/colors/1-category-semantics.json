@@ -6,7 +6,7 @@
         "lighterer":{"value":"{color.ramp.amber.020}"},
         "lighter":{"value":"{color.ramp.amber.030}"},
         "light":{"value":"{color.ramp.amber.040}"},
-        "value":"{color.ramp.amber.050}",
+        "base":{"value":"{color.ramp.amber.050}"},
         "dark":{"value":"{color.ramp.amber.060}"},
         "darker":{"value":"{color.ramp.amber.070}"},
         "darkerer":{"value":"{color.ramp.amber.080}"},
