@@ -1,0 +1,17 @@
+{
+  "color": {
+      "comment": "The common color ramps (as semantics) used across DownQuark Applications",
+      "goldenbrown": {
+        "lightest":{"value":"{color.ramp.amber.010}"},
+        "lighterer":{"value":"{color.ramp.amber.020}"},
+        "lighter":{"value":"{color.ramp.amber.030}"},
+        "light":{"value":"{color.ramp.amber.040}"},
+        "value":"{color.ramp.amber.050}",
+        "dark":{"value":"{color.ramp.amber.060}"},
+        "darker":{"value":"{color.ramp.amber.070}"},
+        "darkerer":{"value":"{color.ramp.amber.080}"},
+        "darkest":{"value":"{color.ramp.amber.090}"},
+        "black":{"value":"{color.ramp.amber.100}"}
+      }
+    }
+}
