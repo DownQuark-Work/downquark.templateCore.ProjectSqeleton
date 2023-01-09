@@ -7,9 +7,24 @@
       "base":{"value":"{font.family.serif.value}", "themeable":true}
     },
     "weight": {
-      "light":{"value":400},
-      "base":{"value":600},
-      "bold":{"value":800}
+      "thin":{"value":100},
+      "hairline":{"value":"{font.weight.thin.value}"},
+      "extra-light":{"value":200},
+      "ultra-light":{"value":"{font.weight.extra-light.value}"},
+      "light":{"value":300},
+      "normal":{"value":400},
+      "regular":{"value":"{font.weight.normal.value}"},
+      "book":{"value":"{font.weight.normal.value}"},
+      "medium":{"value":500},
+      "semi-bold":{"value":600},
+      "demi-bold":{"value":"{font.weight.semi-bold.value}"},
+      "bold":{"value":700},
+      "extra-bold":{"value":800},
+      "ultra-bold":{"value":"{font.weight.extra-bold.value}"},
+      "black":{"value":900},
+      "heavy":{"value":"{font.weight.black.value}"},
+      "extra-black":{"value":950},
+      "ultra-black":{"value":"{font.weight.extra-black.value}"}
     },
     "lineheight": {
       "tight":{"value": "1.2rem"},
@@ -18,3 +33,4 @@
     }
   }
 }
+
