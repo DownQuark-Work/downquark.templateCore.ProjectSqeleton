@@ -13,28 +13,33 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
+    "dox": "yarn tsdox && yarn sassdox",
+    "tsdox": "typedoc --options typedoc.conf.json --entryPointStrategy expand --out component-documentation/typescript ./atomic",
+    "sassdox": "sassdoc scss/ -c sassdoc.config.yml -d component-documentation/scss",
     "test": "ts-node test/test.ts",
     "tkn": "style-dictionary build --config ./scss/_tokens/_conf/token-config.js",
     "tkn:cln": "style-dictionary clean",
     "pretest": "npm run build"
   },
   "dependencies": {
-    "glob": "^8.0.3",
-    "lit": "^2.4.1"
+    "lit": "^2.6.1"
   },
   "devDependencies": {
     "@types/glob": "^8",
     "@types/node": "^18.6.1",
+    "glob": "^8.0.3",
     "rollup": "^2.77.1",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-scss": "^4.0.0",
     "rollup-plugin-typescript": "^1.0.1",
     "sass": "^1.56.1",
+    "sassdoc": "^2.7.4",
     "style-dictionary": "^3.7.1",
     "ts-node": "^10.9.1",
     "tslib": "^2.4.0",
-    "typescript": "^4.7.4"
+    "typedoc": "^0.23.24",
+    "typescript": "^4.9.5"
   },
   "files": [
     "_dist"

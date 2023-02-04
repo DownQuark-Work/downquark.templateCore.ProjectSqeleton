@@ -1,0 +1,72 @@
+# cd to this directory and `docker compose up -d`
+## When time for k8s: https://www.groundcover.com/blog/caretta
+name: dq-sqaffold
+services:
+  caddy:
+    image: caddy:latest
+    container_name: server-caddy
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 1212:80
+      - 1313:443
+      - 443:443
+      - 443:443/udp
+    volumes:
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/static:/srv
+      - caddy_data:/data
+      - caddy_config:/config
+
+  deno:
+    image: denoland/deno
+    container_name: server-deno
+    command: deno run -A server/deno.ts --watch
+    ports:
+      - 8084:8084
+    working_dir: /server
+    volumes:
+      - .:/server
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_DB: sqaffold
+
+  arangodb:
+    image: arangodb
+    container_name: db-graph
+    environment:
+      - ARANGO_ROOT_PASSWORD=root
+    ports:
+      - "8529:8529"
+    volumes:
+      - db_graph:/var/lib/arangodb3
+
+  mariadb:
+    image: mariadb:10.5
+    container_name: db-relational
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sqaffold
+      MYSQL_TCP_PORT: 3313
+    ports:
+      - 3313:3313
+    volumes:
+      - db_relational:/var/lib/mysql
+
+  questdb: # https://questdb.io/docs/third-party-tools/prometheus/
+    image: questdb/questdb:latest
+    container_name: db-timeseries
+    ports:
+      - 8812:8812
+      - 9000:9000
+    volumes:
+    - db_timeseries:/questdb
+
+volumes:
+  caddy_data:
+    # external: true # `docker compose down` does not delete volume
+  caddy_config:
+  db_graph:
+  db_relational:
+  db_timeseries:

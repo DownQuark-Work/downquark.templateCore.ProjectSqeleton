@@ -1,0 +1,40 @@
+# NOTE:
+## Using `localhost:1313` for debug disables the cache.
+## `localhost` with no port will be closer to what (w|c|sh)ould be viewed on production
+
+# IMPORTANT:
+# if the security certificate is not trusted from docker you will need to:
+## click the security warning button in the browser url
+## export the certificate
+## drag and drop it into your keychain app
+## then in browser: Settings > Privacy and Security > Security > Advanced > Manage Device Certificates
+## select certificate from list
+## click the "Trust" dropdown >  "Always Trust"
+## save prefs
+
+localhost {
+	header / {
+		Cache-Control "no-cache, no-store, must-revalidate"
+	}
+	file_server browse
+}
+
+localhost:1212 {
+	file_server browse
+}
+
+# livesite.com {
+#	## cache rule for all pages except these listed with other headers
+#	header {
+#		Cache-Control "public, max-age=604800, must-revalidate"
+#	}
+#	## short  caching of the homepage
+#	header / {
+#		Cache-Control "public, max-age=3600, must-revalidate"
+#	}
+#	## no cache for sitemaps
+#	header /sitemap* {
+#		Cache-Control "no-cache, no-store, must-revalidate"
+#	}
+#	file_server browse
+#}

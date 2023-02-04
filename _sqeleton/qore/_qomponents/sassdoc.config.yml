@@ -1,0 +1,14 @@
+basePath: https://github.com/SassDoc/sassdoc
+# shortcutIcon: assets/images/favicon.png
+display:
+  access:
+    - public
+    - private
+  alias: false
+  watermark: true
+
+package: ./package.json
+theme: default
+groups:
+  undefined: General
+descriptionPath: scss/readme.md

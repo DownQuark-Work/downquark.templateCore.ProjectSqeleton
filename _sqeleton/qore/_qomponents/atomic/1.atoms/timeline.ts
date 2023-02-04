@@ -66,7 +66,9 @@ export class AtomTimeline extends LitElement {
         margin-left: 2rem;
     }
   `;
-
+  /**
+ * @type {string | boolean}
+ */
   render() {
     return html`
     <div class="timeline">

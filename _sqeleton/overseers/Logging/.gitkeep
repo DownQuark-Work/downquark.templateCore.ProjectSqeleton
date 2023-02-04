@@ -1,4 +1,5 @@
-https://docs.lnav.org/en/latest/
+https://developers.redhat.com/articles/2021/05/10/introduction-nodejs-reference-architecture-part-2-logging-nodejs#best_practices_for_node_js_logging
+-> [pino](https://getpino.io/#/)
 
 DENO: https://github.com/denoland/deno_std/tree/main/log
 ~~DENO:  https://deno.land/x/analogger@v0.2.0~~

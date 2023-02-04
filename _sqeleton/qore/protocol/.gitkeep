@@ -1,3 +1,26 @@
+https://www.quicknode.com/guides/smart-contract-development <-- <--- THIS!
+- https://www.quicknode.com/guides/smart-contract-development/how-to-write-good-nft-smart-contract
+    - search for:
+  - 64. Configure on-chain royalties
+  - Good NFT smart contract examples
+https://medium.com/@WallStFam/the-ultimate-guide-to-nft-gas-optimization-7e9289e2d88f
+
+https://github.com/smartcontracts/ <<
+https://github.com/fiveoutofnine/cool-contracts/ <<
+
+https://nftcalendar.io/ <--
+https://www.contractreader.io/
+- https://www.contractreader.io/contract/0x8d3b078d9d9697a8624d4b32743b02d270334af1
+
+DO THE FOLLOWING|
+:: https://www.quicknode.com/guides/smart-contract-development/the-diamond-standard-eip-2535-explained-part-1
+::: https://www.quicknode.com/guides/smart-contract-development/how-to-create-and-deploy-an-erc-1155-nft
+:::: https://www.quicknode.com/guides/smart-contract-development/how-to-create-a-smart-contract-factory-in-solidity-using-hardhat
+:::: https://www.quicknode.com/guides/smart-contract-development/how-to-mint-nfts-using-the-erc721a-implementation
+
+https://www.npmjs.com/package/@nomiclabs/hardhat-etherscan
+https://www.npmjs.com/package/eth-gas-reporter
+
 https://docs.soliditylang.org/en/v0.8.17/
 
 https://chiru-labs.github.io/ERC721A/#/ <-- ERC721A
