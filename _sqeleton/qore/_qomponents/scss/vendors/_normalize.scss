@@ -19,7 +19,15 @@
 /**
  * Remove the margin in all browsers.
  */
-
+/// @example
+///   4 + 2 = 6
+///   4 / 2 = 2
+///   - remove this code from:
+///     - `_sqeleton/qore/_qomponents/scss/vendors/_normalize.scss`
+///
+/// @example scss - Clamp function
+///   clamp(42, $min: 13, $max: 37)
+///   // 37
 body {
   margin: 0;
 }

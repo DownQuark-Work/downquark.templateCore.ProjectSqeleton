@@ -17,7 +17,7 @@ export class AtomButton extends LitElement {
       background: hsl(50 80% 40%);
     }
     .planet {
-      color: var(--planet-color, black);
+      color: var(--planet-color, purple);
     }
   `;
 
@@ -25,6 +25,9 @@ export class AtomButton extends LitElement {
 
   // Define reactive properties--updating a reactive property causes
   // the component to update.
+  /**
+ * @type {string | boolean}
+ */
   @property() greeting = "Hello!!!";
   @property() planet = "World";
 
@@ -44,6 +47,12 @@ export class AtomButton extends LitElement {
 
   // Event handlers can update the state of @properties on the element
   // instance, causing it to re-render
+  /**
+ * Set the color and type of the shoelaces.
+ *
+ * @param {LACE_COLORS} color - The shoelace color.
+ * @param {LACE_TYPES} type - The type of shoelace.
+ */
   togglePlanet() {
     this.planet = this.planet === "World" ? "Mars" : "World";
   }

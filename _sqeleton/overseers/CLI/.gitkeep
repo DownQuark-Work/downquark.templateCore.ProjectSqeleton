@@ -1,4 +1,48 @@
-https://linuxhandbook.com/docker-alternatives/
+## Google Analytics Alternative
+- https://plausible.io/
+
+## Forum/Wiki
+- https://medevel.com/os-wiki-engines-for-2021/
+  - https://tiki.org/tiki-index.php?page=Software%20Overview%20and%20Model&redirectpage=Features
+    - https://doc.tiki.org/multitiki
+    - https://doc.tiki.org/intertiki
+  - https://doc.tiki.org/Forums
+    - https://doc.tiki.org/OS-X-Install
+  - https://hub.docker.com/search?q=tiki <<--
+    - https://hub.docker.com/r/tikiwiki/tikiwiki
+    - https://hub.docker.com/r/tikiwiki/php
+
+    - https://hub.docker.com/r/fundocker/forum/tags
+    - https://hub.docker.com/layers/edxops/forum/latest/images/sha256-a9e0173c1d88e37397baa83313e3822a92d4fa9f7352096c67dd7cf2d30b7e9e?context=explore
+
+## DOCKER
+---
+### images (docker-compose)
+- https://hub.docker.com/r/denoland/deno <-- may be better to run this separate from the command line
+- https://hub.docker.com/_/caddy <-- may be better to run this separate from the command line
+- https://hub.docker.com/_/mariadb
+- https://hub.docker.com/_/arangodb
+- https://hub.docker.com/r/questdb/questdb
+- https://github.com/docker/awesome-compose/tree/master/elasticsearch-logstash-kibana
+  - (phase2?) 
+    - https://github.com/docker/awesome-compose/tree/master/wireguard
+    - https://github.com/docker/awesome-compose/tree/master/apache-php
+  - (easteregg?) https://hub.docker.com/r/itzg/minecraft-server/
+    - https://github.com/itzg/docker-minecraft-server/tree/master/examples
+---
+> For debug: **https://labs.play-with-docker.com**
+> > For learning: **https://training.play-with-docker.com**
+---
+> > https://hub.docker.com/ - un:mlnck ~ pw D0@
+> https://docs.docker.com/get-started/ <
+https://github.com/orgs/dockersamples/repositories
+https://docs.docker.com/compose/compose-file/
+- https://docs.docker.com/samples/
+- https://github.com/dockersamples?q=&type=all&language=&sort=stargazers
+> > > https://docs.docker.com/desktop/dev-environments/create-dev-env/
+---
+- https://linuxhandbook.com/docker-alternatives/
+
 
 EXAMPLES:
 https://github.com/Im-Beast/deno_tui

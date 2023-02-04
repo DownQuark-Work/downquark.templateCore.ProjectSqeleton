@@ -1,0 +1,24 @@
+# Virtual Hosts
+#
+# Required modules: mod_log_config
+
+# If you want to maintain multiple domains/hostnames on your
+# machine you can setup VirtualHost containers for them. Most configurations
+# use only name-based virtual hosts so the server doesn't need to worry about
+# IP addresses. This is indicated by the asterisks in the directives below.
+#
+# Please see the documentation at 
+# <URL:http://httpd.apache.org/docs/2.4/vhosts/>
+# for further details before you try to setup virtual hosts.
+#
+# NOTE: `apachectl -S` will validate the vhosts syntax
+
+<VirtualHost *:8080>
+    ServerAdmin "YOUR_NAME@EMAIL.ADDRESS"
+    DocumentRoot "</usr/ABSOLUTE/PATH/TO/THE/PROJECT>/_sqeleton/outliers/dq-knowledge-base/_logs"
+    ServerName "quark.dq"
+    ServerAlias "down.quark.dq"
+    ServerAlias "blog.quark.dq down.quark.dq forum.quark.dq wiki.quark.dq"
+    ErrorLog "</usr/ABSOLUTE/PATH/TO/THE/PROJECT>/_sqeleton/outliers/dq-knowledge-base/_logs/error_log"
+    CustomLog "</usr/ABSOLUTE/PATH/TO/THE/PROJECT>/_sqeleton/outliers/dq-knowledge-base/_logs/access_log" common
+</VirtualHost>

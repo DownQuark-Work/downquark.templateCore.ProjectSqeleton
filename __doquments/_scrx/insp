@@ -1,12 +1,23 @@
-## Image Manipulation
-- https://goart.fotor.com/?effect=269 \[structuralism]
-- https://ribbet.ai/Cartoonize <-- holy ! - maybe for the "about the author" on YOUnique Tales (or something)
-- https://justinpinkney.github.io/toonify-api-docs/
+- https://blog.izs.me/2017/06/documentation-driven-development/
+  - http://www.extremeprogramming.org/index.html
+
+## Misc
+- https://developer.chrome.com/articles/high-definition-css-color-guide/#oklch << 
+- https://terrastruct.com/ - The diagramming tool -=for developers
+- https://bob.build/
+- https://www.producthunt.com/golden-kitty-awards/hall-of-fame
+- https://brandmark.io/tools/
+- https://github.com/jensimmons/cssremedy <<
+- https://shoelace.style/
+- https://medium.com/everything-full-stack/design-patterns-and-principles-that-support-large-scale-systems-f3c9adf89ad <<<
+- https://web.dev/new-patterns-for-amazing-apps/
+> https://serviceworkies.com/ !!!!!
+- https://www.totaljs.com/flow/
 
 https://www.designyourway.net/blog/inspiration/the-simple-yet-complicated-mobile-ui-list-design-43-examples/
 
+https://loremfaces.com/
 https://lottiefiles.com/
-
 https://startupresources.io/
 
 > I don't think esbuild supports `umd` export format - but look into it when it does
@@ -20,7 +31,10 @@ https://readme.so/editor
 - https://github.com/LappleApple/feedmereadmes
 
 ## Design
+- https://stockimg.ai/there-is-a-logo-for-that
+
 ### grid
+- https://js.cytoscape.org/ <--- CANVAS GRID
 - https://gridlover.net/try.html
 - https://www.modularscale.com/ <-- modular text sizing calculator
 
@@ -28,32 +42,44 @@ https://readme.so/editor
 - https://landings.dev/orange-purple-dark
 
 ### Color Pallet
+- https://fffuel.co/sssvg/
+- https://www.happyhues.co/ << -- colors we're looking for on this one!
 - https://colorable.jxnblk.com/
 - https://mycolor.space/
 
 - https://roadmap.sh/design-system
 
 ### Styling (to integrate)
+- https://blog.openreplay.com/a-top-collection-of-css-code-generators/
+
 > don't spend too much time worrying about the cascade for - but when time permits:
 - https://lit.dev/docs/components/styles/#shadow-dom
 - https://web.dev/constructable-stylesheets/
+  - https://developer.mozilla.org/en-US/docs/Web/CSS/::part
 
 Insp: https://landings.dev/
 - Better than octopus.do: `% cd /Applications/Wireflow && ys` <<<<<<
 - https://www.checklist.design/
 - https://manuals.gravitydept.com/
+- https://www.editorx.com/inspiration
+
+- https://dribbble.com/shots/19444133-Book-Store-Concept
+- https://kinsta.com/blog/web-components/
 
 ### Styling (to integrate)
+- [amigo](https://amigocss.com)
+- [clay](https://github.com/codeAdrian/clay.css)
+- [picnic](https://picnicss.com/)
 - [pico](https://github.com/picocss/pico)
+- [pure](https://purecss.io/)
+- [simple](https://simplecss.org/)
 - [skeleton](http://getskeleton.com/)
 - [water](https://watercss.kognise.dev/)
-- [picnic](https://picnicss.com/)
-- [pure](https://purecss.io/)
 - https://gerillass.com/ - good mixins/funcs to leverage
 - https://lit.dev/docs/components/styles/#shadow-dom
 - https://web.dev/constructable-stylesheets/
 
-- https://lhammer.cn/You-need-to-know-css/#/ <-- this is a **_REALLY**_ good resource for _Artist Platform_ in particular
+- https://lhammer.cn/You-need-to-know-css/#/
 - https://layout.bradwoods.io/ <-- color scheme for AP?
 - https://csslayout.io/
 - https://uiverse.io/
@@ -80,3 +106,70 @@ Insp: https://landings.dev/
 -
 - Vollkorn << second
 - Titillium Web << place
+
+---
+_Pageless_ pages
+```css
+section {
+  /* ! Everything below is needed ! */
+  display: none;
+  position: absolute;
+  top: 0;
+  min-height: 100vh;
+  width: 100%;
+  background: var(--bgcolor);
+}
+
+/* Show section */
+section:target { display: block; }
+/* Show #home by default */
+section#home { display: block; }
+```
+```html
+<section id="home"> <!-- HOME --></section>
+<section id="about"> <!-- ABOUT --></section>
+<section id="news"> <!-- NEWS --></section>
+<section id="photos"> <!-- PHOTOS --></section>
+<section id="portfolio"> <!-- PORTFOLIO --></section>
+<section id="another-page"> <!-- ANOTHER PAGE --></section>
+<a href="#another-page">This is a link to another page</a>
+```
+
+---
+
+https://engage.so/
+
+--- 
+
+* https://www.smashingmagazine.com/2021/06/has-native-css-parent-selector
+* https://www.bram.us/2021/12/21/the-css-has-selector-is-way-more-than-a-parent-selector/
+> The syntax for both :is() and :where() is exactly the same, however, the difference between them comes down to specificity. :is() takes the specificity of its most specific argument, whereas :where() always has 0 specificity – similar to the universal selector (*).
+---
+> https://www.bram.us/2023/01/12/sibling-scopes-in-css-thanks-to-has/
+`.from ~ :has(~ .to) { outline: 1px solid red; }`
+
+> https://developer.chrome.com/blog/has-m105/#forms
+```.form-group__error { display: none; }
+.form-group:has(:invalid:not(:focus)) .form-group__error { display: block; }```
+
+```:root:has([aria-expanded="true"]) { --open: 1; }
+body { transform: translateX(calc(var(--open, 0) * -200px)); }```
+---
+Container Query
+* Syntax
+```todo```
+* Values
+```cqw (Container Query Width) – 1% of the container's width
+cqh (Container Query Height) – 1% of the container's height
+cqi (Container Query Inline) – 1% of the container's inline size
+cqb (Container Query Block) – 1% of the container's block size
+
+cqmin (Container Query Minimum) – the smaller value of cqi and cqb
+cqmax (Container Query Maximum) – the larger value of cqi and cqb
+
+p {
+  font-size: clamp(1rem, 2.5cqw, 2rem);
+  line-height: clamp(1.35rem, 3.5cqw, 1.9rem);
+}```
+
+https://ishadeed.com/article/learn-css-subgrid/
