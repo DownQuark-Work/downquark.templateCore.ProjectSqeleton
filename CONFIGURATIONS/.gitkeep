@@ -1,3 +1,6 @@
+Look into: https://rome.tools/blog/2022/11/08/rome-10/
+
+
 - create a hash of server ports and the entity they belong to and use those when launching deno, node, etc
 
 - https://dev.to/vaultree/designing-a-secure-api-4059
